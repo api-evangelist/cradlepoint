@@ -1,0 +1,117 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Cradlepoint
+providerId: cradlepoint
+created: '2026-05-25'
+modified: '2026-05-25'
+reconciled: false
+tags:
+  - Wireless WAN
+  - 5G
+  - NetCloud
+  - SD-WAN
+  - SASE
+description: >-
+  Cradlepoint sells through quote-based enterprise contracts; published list
+  pricing is not available on cradlepoint.com. NetCloud is bundled with
+  hardware as a per-router annual or multi-year subscription with tiered
+  Essentials / Advanced / Advanced Plus levels, plus add-ons for NetCloud
+  Exchange (SASE / SD-WAN / Secure Connect / Service Gateway) and Ericsson
+  Private 5G. The NetCloud Manager API is included with every NetCloud
+  subscription at no additional metered cost; there is no public per-call
+  pricing surface.
+sources:
+  - https://cradlepoint.com/products/netcloud-service/
+  - https://cradlepoint.com/products/netcloud-sase/
+  - https://cradlepoint.com/lets-talk/
+plans:
+  - id: cradlepoint-netcloud-essentials
+    name: NetCloud Essentials
+    type: subscription
+    description: >-
+      Entry-tier NetCloud subscription bundled with a Cradlepoint router.
+      Cloud-based management, configuration, alerting, basic SD-WAN, and
+      access to the NCM API. Quote-based per-router annual or multi-year
+      pricing.
+    entries:
+      - label: Per router (annual)
+        name: per-router-subscription
+        type: quote
+        metric: device
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: 'quote'
+        userMultiplied: false
+  - id: cradlepoint-netcloud-advanced
+    name: NetCloud Advanced
+    type: subscription
+    description: >-
+      Mid-tier NetCloud subscription adding advanced security, zero-touch
+      deployment, expanded analytics, and richer policy controls. Quote-based.
+    entries:
+      - label: Per router (annual)
+        name: per-router-subscription
+        type: quote
+        metric: device
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: 'quote'
+        userMultiplied: false
+  - id: cradlepoint-netcloud-advanced-plus
+    name: NetCloud Advanced Plus
+    type: subscription
+    description: >-
+      Top-tier NetCloud subscription with the broadest feature set including
+      advanced security stack and SD-WAN inclusions. Quote-based.
+    entries:
+      - label: Per router (annual)
+        name: per-router-subscription
+        type: quote
+        metric: device
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: 'quote'
+        userMultiplied: false
+  - id: cradlepoint-netcloud-sase
+    name: NetCloud SASE
+    type: subscription
+    description: >-
+      SASE add-on bundling NetCloud Exchange Secure Connect, SD-WAN, and
+      ZTNA over the Cradlepoint cloud fabric. Quote-based per-site or
+      per-user pricing.
+    entries:
+      - label: Per site / per user
+        name: sase-subscription
+        type: quote
+        metric: site
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: 'quote'
+        userMultiplied: false
+  - id: cradlepoint-ericsson-private-5g
+    name: Ericsson Private 5G
+    type: subscription
+    description: >-
+      Dedicated private 5G network solution delivered alongside Cradlepoint
+      edge routers via Ericsson Enterprise Wireless. Quote-based; pricing
+      depends on coverage, radios, core, and integration scope.
+    entries:
+      - label: Solution
+        name: private-5g-solution
+        type: quote
+        metric: solution
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: 'quote'
+        userMultiplied: false

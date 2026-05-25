@@ -1,0 +1,65 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "cradlepoint": "https://www.cradlepointecm.com/api/v2/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Router": {
+      "@id": "cradlepoint:Router",
+      "@context": {
+        "id": { "@id": "cradlepoint:Router/id", "@type": "xsd:string" },
+        "account": { "@id": "cradlepoint:Router/account", "@type": "xsd:string" },
+        "group": { "@id": "cradlepoint:Router/group", "@type": "xsd:string" },
+        "name": { "@id": "schema:name", "@type": "xsd:string" },
+        "description": { "@id": "schema:description", "@type": "xsd:string" },
+        "mac": { "@id": "cradlepoint:Router/mac", "@type": "xsd:string" },
+        "serial_number": { "@id": "schema:serialNumber", "@type": "xsd:string" },
+        "product": { "@id": "schema:model", "@type": "xsd:string" },
+        "actual_firmware": { "@id": "cradlepoint:Router/firmware", "@type": "xsd:string" },
+        "state": { "@id": "cradlepoint:Router/state", "@type": "xsd:string" },
+        "last_seen_at": { "@id": "cradlepoint:Router/lastSeenAt", "@type": "xsd:dateTime" }
+      }
+    },
+
+    "Alert": {
+      "@id": "cradlepoint:Alert",
+      "@context": {
+        "id": { "@id": "cradlepoint:Alert/id", "@type": "xsd:string" },
+        "account": { "@id": "cradlepoint:Alert/account", "@type": "xsd:string" },
+        "router": { "@id": "cradlepoint:Alert/router", "@type": "xsd:string" },
+        "type": { "@id": "cradlepoint:Alert/type", "@type": "xsd:string" },
+        "severity": { "@id": "cradlepoint:Alert/severity", "@type": "xsd:string" },
+        "message": { "@id": "schema:description", "@type": "xsd:string" },
+        "created_at": { "@id": "dcterms:created", "@type": "xsd:dateTime" },
+        "acknowledged_at": { "@id": "cradlepoint:Alert/acknowledgedAt", "@type": "xsd:dateTime" }
+      }
+    },
+
+    "NetDevice": {
+      "@id": "cradlepoint:NetDevice",
+      "@context": {
+        "id": { "@id": "cradlepoint:NetDevice/id", "@type": "xsd:string" },
+        "router": { "@id": "cradlepoint:NetDevice/router", "@type": "xsd:string" },
+        "carrier": { "@id": "cradlepoint:NetDevice/carrier", "@type": "xsd:string" },
+        "signal_strength": { "@id": "cradlepoint:NetDevice/signalStrength", "@type": "xsd:integer" },
+        "rsrp": { "@id": "cradlepoint:NetDevice/rsrp", "@type": "xsd:integer" },
+        "rsrq": { "@id": "cradlepoint:NetDevice/rsrq", "@type": "xsd:integer" },
+        "iccid": { "@id": "cradlepoint:NetDevice/iccid", "@type": "xsd:string" },
+        "imei": { "@id": "cradlepoint:NetDevice/imei", "@type": "xsd:string" }
+      }
+    },
+
+    "HistoricalLocation": {
+      "@id": "cradlepoint:HistoricalLocation",
+      "@context": {
+        "router": { "@id": "cradlepoint:HistoricalLocation/router", "@type": "xsd:string" },
+        "latitude": { "@id": "schema:latitude", "@type": "xsd:float" },
+        "longitude": { "@id": "schema:longitude", "@type": "xsd:float" },
+        "created_at": { "@id": "dcterms:created", "@type": "xsd:dateTime" }
+      }
+    }
+  }
+}

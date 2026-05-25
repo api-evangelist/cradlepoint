@@ -1,0 +1,222 @@
+aid: cradlepoint
+name: Cradlepoint
+description: >-
+  Cradlepoint is a Boise, Idaho-based provider of cloud-managed wireless edge
+  routers, 5G adapters, branch-in-a-box appliances, and the NetCloud platform
+  for enterprise wireless WAN (LTE/5G), in-vehicle networks, branch
+  connectivity, and IoT. Ericsson acquired Cradlepoint in 2020 (closed November
+  2020 for approximately US$1.1B) and Cradlepoint now operates as the core of
+  Ericsson Enterprise Wireless Solutions, working alongside Ericsson Private 5G
+  and the Ericsson NetCloud SASE offering. Cradlepoint exposes its NetCloud
+  Manager (NCM) platform through a documented RESTful API — NCM API v2 (Swagger
+  1.2, paired X-CP-API-ID/X-CP-API-KEY + X-ECM-API-ID/X-ECM-API-KEY headers,
+  base https://www.cradlepointecm.com/api/v2/) and a newer NCM API v3
+  (OpenAPI 3.0, bearer-token authentication) — plus a NetCloud Router SDK for
+  on-router Python applications and webhook destinations for alert delivery.
+  The developer area (developer.cradlepoint.com), customer support article
+  base (customer.cradlepoint.com), and Ericsson Enterprise Wireless docs
+  portal (docs.cradlepoint.com) host the Getting Started guides, API
+  reference, sample collections, and Postman bundles.
+type: Index
+position: Provider
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Wireless WAN
+  - 5G
+  - LTE
+  - Edge
+  - Branch Networking
+  - SD-WAN
+  - SASE
+  - Routers
+  - In-Vehicle
+  - IoT
+  - Cellular
+  - Private 5G
+  - NetCloud
+  - Ericsson
+url: https://raw.githubusercontent.com/api-evangelist/cradlepoint/refs/heads/main/apis.yml
+created: '2026-05-25'
+modified: '2026-05-25'
+specificationVersion: '0.20'
+apis:
+  - aid: cradlepoint:netcloud-manager-api-v2
+    name: Cradlepoint NetCloud Manager API v2
+    description: >-
+      RESTful API for the NetCloud Manager (NCM) platform. Programmatic access
+      to accounts, routers, groups, configuration_managers, alerts and
+      alert_rules, alert_push_destinations, activity_logs, locations and
+      historical_locations, net_devices, net_device_signal_samples,
+      net_device_usage_samples, net_device_health, net_device_metrics,
+      router_alerts, router_lans, router_state_samples, users, subscriptions,
+      and firmware. Base URL https://www.cradlepointecm.com/api/v2/.
+      Authentication uses two paired key sets sent as headers on every
+      request — X-CP-API-ID / X-CP-API-KEY (account-level Cradlepoint API
+      keys, for usage tracking) and X-ECM-API-ID / X-ECM-API-KEY (NCM-tenant
+      API keys generated from the NCM Tools tab; carry the
+      Administrator / Full Access / Read-Only / Diagnostic role grants).
+      Supports GET, POST, PUT, PATCH, DELETE; not every method is supported on
+      every resource. Documented with Swagger 1.2.
+    humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+    baseURL: https://www.cradlepointecm.com/api/v2/
+    tags:
+      - NetCloud
+      - Routers
+      - Wireless WAN
+      - Edge
+      - Cellular
+    properties:
+      - type: Documentation
+        url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+      - type: Documentation
+        url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+      - type: GettingStarted
+        url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+      - type: Developer
+        url: https://developer.cradlepoint.com/
+      - type: OpenAPI
+        url: openapi/cradlepoint-netcloud-manager-api-v2-openapi.yml
+      - type: Postman
+        url: https://developer.cradlepoint.com/documentation/samples
+      - type: SampleCode
+        url: https://github.com/cradlepoint/api-samples
+      - type: NaftikoCapability
+        url: capabilities/netcloud-manager-routers.yaml
+      - type: NaftikoCapability
+        url: capabilities/netcloud-manager-alerts.yaml
+      - type: NaftikoCapability
+        url: capabilities/netcloud-manager-net-devices.yaml
+      - type: NaftikoCapability
+        url: capabilities/netcloud-manager-accounts.yaml
+      - type: JSONSchema
+        url: json-schema/cradlepoint-router-schema.json
+      - type: JSONSchema
+        url: json-schema/cradlepoint-alert-schema.json
+      - type: JSONLD
+        url: json-ld/cradlepoint-context.jsonld
+
+  - aid: cradlepoint:netcloud-manager-api-v3
+    name: Cradlepoint NetCloud Manager API v3
+    description: >-
+      The next-generation NetCloud Manager API. Documented with OpenAPI 3.0,
+      authenticated with bearer tokens, designed for improved performance,
+      stability, and usability over API v2. Coexists with v2 during a
+      multi-year transition window; v3 covers core router, device, alert,
+      group, and account operations.
+    humanURL: https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3
+    tags:
+      - NetCloud
+      - Routers
+      - 5G
+    properties:
+      - type: Documentation
+        url: https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3
+      - type: Developer
+        url: https://developer.cradlepoint.com/
+      - type: SampleCode
+        url: https://github.com/cradlepoint/api-samples
+
+  - aid: cradlepoint:netcloud-webhooks
+    name: Cradlepoint NetCloud Alert Webhooks
+    description: >-
+      Outbound HTTP destinations (alert_push_destinations) configured via the
+      NCM API or UI to receive real-time JSON alert payloads when NCM alert
+      rules fire (router offline, signal degradation, configuration change,
+      subscription expiration, threshold breach). Each destination is a URL +
+      optional auth headers; payload includes account, router, alert type,
+      timestamp, and contextual metadata.
+    humanURL: https://developer.cradlepoint.com/documentation/webhooks
+    tags:
+      - Webhooks
+      - Events
+      - Alerts
+    properties:
+      - type: Documentation
+        url: https://developer.cradlepoint.com/documentation/webhooks
+      - type: Documentation
+        url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+
+  - aid: cradlepoint:netcloud-router-sdk
+    name: Cradlepoint NetCloud Router SDK
+    description: >-
+      On-router Python SDK and toolchain (the "SDK" / "Router SDK") for
+      building and deploying custom applications onto Cradlepoint routers
+      running NetCloud OS. Lets developers write Python apps that read router
+      configuration, GPIO, GPS, modem signal, and connection state, and that
+      can be packaged and deployed across a fleet via NCM. Sample apps in
+      cradlepoint/sdk-samples cover GPS forwarding, modem diagnostics,
+      serial passthrough, MQTT publishing, and more.
+    humanURL: https://github.com/cradlepoint/sdk-samples
+    tags:
+      - SDK
+      - Edge
+      - Python
+      - Routers
+    properties:
+      - type: SDK
+        url: https://github.com/cradlepoint/sdk-samples
+      - type: Documentation
+        url: https://customer.cradlepoint.com/s/article/NCOS-Router-SDK-Developers-Guide
+      - type: Language
+        url: https://www.python.org/
+
+common:
+  - type: Website
+    url: https://cradlepoint.com
+  - type: Company
+    url: https://cradlepoint.com/about-us/
+  - type: Products
+    url: https://cradlepoint.com/products/
+  - type: NetCloud
+    url: https://cradlepoint.com/products/netcloud-service/
+  - type: NetCloudSASE
+    url: https://cradlepoint.com/products/netcloud-sase/
+  - type: Private5G
+    url: https://cradlepoint.com/products/private-5g/
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Documentation
+    url: https://docs.cradlepoint.com/
+  - type: Support
+    url: https://customer.cradlepoint.com/
+  - type: GitHub
+    url: https://github.com/cradlepoint
+  - type: APISamples
+    url: https://github.com/cradlepoint/api-samples
+  - type: SDKSamples
+    url: https://github.com/cradlepoint/sdk-samples
+  - type: ContainerSamples
+    url: https://github.com/cradlepoint/container-samples
+  - type: Blog
+    url: https://cradlepoint.com/resources/blog/
+  - type: News
+    url: https://cradlepoint.com/news-events/
+  - type: Pricing
+    url: https://cradlepoint.com/lets-talk/
+  - type: Careers
+    url: https://cradlepoint.com/about-us/careers/
+  - type: Contact
+    url: https://cradlepoint.com/lets-talk/
+  - type: Ericsson
+    url: https://www.ericsson.com/en/enterprise-wireless-solutions
+  - type: Twitter
+    url: https://twitter.com/cradlepoint
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/cradlepoint
+  - type: YouTube
+    url: https://www.youtube.com/@Cradlepoint
+  - type: Plans
+    url: plans/cradlepoint-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/cradlepoint-rate-limits.yml
+  - type: FinOps
+    url: finops/cradlepoint-finops.yml
+  - type: Vocabulary
+    url: vocabulary/cradlepoint-vocabulary.yml
+  - type: SpectralRules
+    url: rules/cradlepoint-rules.yml
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

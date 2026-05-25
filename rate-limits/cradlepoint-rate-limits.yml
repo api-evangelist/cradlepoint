@@ -1,0 +1,42 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Cradlepoint
+providerId: cradlepoint
+created: '2026-05-25'
+modified: '2026-05-25'
+reconciled: false
+tags:
+  - NetCloud
+  - Rate Limiting
+  - Quotas
+description: >-
+  Cradlepoint does not publish a single quantitative rate-limit table for the
+  NetCloud Manager API. Limits are enforced server-side and Cradlepoint's
+  Getting Started documentation advises clients to handle HTTP 429 / 503
+  responses with exponential backoff, paginate large queries with `limit`
+  and `offset`, and avoid tight polling loops in favor of alert push
+  destinations. Hard quotas are not publicly documented.
+sources:
+  - https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+headers: {}
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+  serverBusy: 503
+algorithm: undisclosed
+policies:
+  - id: ncm-v2-default
+    name: NCM API v2 default
+    scope: api-key-pair
+    description: >-
+      Server-side throttling is applied per X-ECM-API-ID / X-ECM-API-KEY pair.
+      Exact request-per-minute and per-day numbers are not disclosed publicly.
+      Clients should respond to 429 with exponential backoff (Retry-After if
+      present) and prefer webhook alert delivery over polling.
+    recommendations:
+      - Use pagination (`limit` <= 500, `offset`) on list endpoints.
+      - Subscribe to `alert_push_destinations` instead of polling `/alerts/`.
+      - Apply exponential backoff on 429 / 503 responses.
+      - Avoid concurrent identical queries; cache list responses where possible.

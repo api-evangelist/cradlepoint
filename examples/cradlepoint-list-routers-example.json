@@ -1,0 +1,59 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://www.cradlepointecm.com/api/v2/routers/?limit=2&state=online",
+    "headers": {
+      "X-CP-API-ID": "$X_CP_API_ID",
+      "X-CP-API-KEY": "$X_CP_API_KEY",
+      "X-ECM-API-ID": "$X_ECM_API_ID",
+      "X-ECM-API-KEY": "$X_ECM_API_KEY",
+      "Content-Type": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "id": "12345678",
+          "account": "987654",
+          "group": "20001",
+          "name": "store-0142-front",
+          "description": "Front-of-house WAN at store 142",
+          "mac": "00:30:44:01:23:45",
+          "serial_number": "MM240123456789",
+          "product": "E3000",
+          "actual_firmware": "7.24.40",
+          "target_firmware": "7.24.40",
+          "state": "online",
+          "last_seen_at": "2026-05-25T16:42:11Z",
+          "ipv4_address": "10.42.7.1",
+          "created_at": "2024-04-12T18:02:11Z"
+        },
+        {
+          "id": "12345679",
+          "account": "987654",
+          "group": "20001",
+          "name": "store-0143-front",
+          "description": "Front-of-house WAN at store 143",
+          "mac": "00:30:44:01:23:46",
+          "serial_number": "MM240123456790",
+          "product": "E300",
+          "actual_firmware": "7.24.40",
+          "target_firmware": "7.24.40",
+          "state": "online",
+          "last_seen_at": "2026-05-25T16:42:18Z",
+          "ipv4_address": "10.43.7.1",
+          "created_at": "2024-05-02T18:02:11Z"
+        }
+      ],
+      "meta": {
+        "limit": 2,
+        "offset": 0,
+        "total_count": 1842,
+        "next": "/api/v2/routers/?limit=2&offset=2&state=online",
+        "previous": null
+      }
+    }
+  }
+}

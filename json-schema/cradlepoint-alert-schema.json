@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/cradlepoint/main/json-schema/cradlepoint-alert-schema.json",
+  "title": "Cradlepoint NCM Alert",
+  "description": "A generated alert in NetCloud Manager. Mirrors the payload pushed to alert_push_destinations and the response returned from /api/v2/alerts/.",
+  "type": "object",
+  "required": ["id", "account", "type", "created_at"],
+  "properties": {
+    "id": { "type": "string" },
+    "account": { "type": "string" },
+    "router": { "type": "string" },
+    "group": { "type": ["string", "null"] },
+    "type": {
+      "type": "string",
+      "description": "Alert type identifier, e.g. router_offline, signal_degraded, config_changed, subscription_expiring, threshold_breach."
+    },
+    "message": { "type": "string" },
+    "severity": {
+      "type": "string",
+      "enum": ["info", "warning", "error", "critical"]
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Free-form contextual payload (signal samples, config diff, threshold values)."
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "acknowledged_at": { "type": ["string", "null"], "format": "date-time" },
+    "acknowledged_by": { "type": ["string", "null"] }
+  }
+}

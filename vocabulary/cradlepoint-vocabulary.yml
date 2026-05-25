@@ -1,0 +1,96 @@
+vocabulary: Cradlepoint
+description: >-
+  Operational and capability vocabulary for the Cradlepoint NetCloud Manager
+  API, NetCloud Exchange (SASE), Ericsson Private 5G, and the Cradlepoint
+  Router SDK.
+provider: Cradlepoint
+providerId: cradlepoint
+created: '2026-05-25'
+modified: '2026-05-25'
+domains:
+  - id: wireless-wan
+    name: Wireless WAN
+    terms:
+      - Cellular
+      - LTE
+      - 5G
+      - 5G Standalone
+      - 5G Sub-6
+      - 5G mmWave
+      - Dual-Modem
+      - Carrier Aggregation
+      - Failover
+      - Load Balancing
+      - SIM
+      - eSIM
+      - APN
+  - id: edge-routing
+    name: Edge Routing
+    terms:
+      - Router
+      - Branch
+      - In-Vehicle
+      - IoT Gateway
+      - Cellular Adapter
+      - GPIO
+      - Modem
+      - WAN Interface
+      - LAN Interface
+      - Ethernet
+      - WiFi
+      - GPS
+  - id: netcloud
+    name: NetCloud
+    terms:
+      - NetCloud Manager
+      - NCM
+      - NCOS
+      - Account
+      - Subaccount
+      - Group
+      - Configuration Manager
+      - Target Firmware
+      - Zero-Touch Deployment
+      - Alert
+      - Alert Rule
+      - Alert Push Destination
+      - Activity Log
+      - User Role
+      - Administrator
+      - Full Access User
+      - Read Only User
+      - Diagnostic User
+  - id: sase
+    name: SASE / SD-WAN
+    terms:
+      - NetCloud Exchange
+      - Secure Connect
+      - SD-WAN
+      - ZTNA
+      - Service Gateway
+      - Cloud Fabric
+      - SSE
+      - Private 5G
+  - id: telemetry
+    name: Telemetry and Monitoring
+    terms:
+      - Signal Strength
+      - RSRP
+      - RSRQ
+      - SINR
+      - Carrier
+      - Roaming
+      - Connection State
+      - Net Device Health
+      - Net Device Metrics
+      - Historical Location
+      - Router State Sample
+  - id: governance
+    name: Governance
+    terms:
+      - FedRAMP
+      - Authority to Operate
+      - GovCloud
+      - Multi-Tenant
+      - API Key Rotation
+      - Webhook Signing

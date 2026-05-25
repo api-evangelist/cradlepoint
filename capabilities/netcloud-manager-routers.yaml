@@ -1,0 +1,62 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Cradlepoint NetCloud Manager — Routers
+  description: >-
+    Cradlepoint NetCloud Manager API v2 — Routers business surface. List
+    routers, retrieve a single router, and update editable router fields.
+    Self-contained Naftiko capability bound to NCM v2 paired-key auth.
+  tags:
+    - Cradlepoint
+    - NetCloud
+    - Routers
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+  - namespace: env
+    keys:
+      CRADLEPOINT_CP_API_ID: CRADLEPOINT_CP_API_ID
+      CRADLEPOINT_CP_API_KEY: CRADLEPOINT_CP_API_KEY
+      CRADLEPOINT_ECM_API_ID: CRADLEPOINT_ECM_API_ID
+      CRADLEPOINT_ECM_API_KEY: CRADLEPOINT_ECM_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: netcloud-manager-routers
+      baseUri: https://www.cradlepointecm.com/api/v2
+      description: NCM v2 Routers business capability.
+      resources:
+        - name: routers
+          path: /routers/
+          operations:
+            - name: listrouters
+              method: GET
+              description: List Routers visible to the authenticated NCM keys.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+        - name: router
+          path: /routers/{id}/
+          operations:
+            - name: getrouter
+              method: GET
+              description: Get A single Router by ID.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+            - name: updaterouter
+              method: PATCH
+              description: Update editable router fields.
+              outputRawFormat: json
+      authentication:
+        type: composite
+        headers:
+          X-CP-API-ID: '{{env.CRADLEPOINT_CP_API_ID}}'
+          X-CP-API-KEY: '{{env.CRADLEPOINT_CP_API_KEY}}'
+          X-ECM-API-ID: '{{env.CRADLEPOINT_ECM_API_ID}}'
+          X-ECM-API-KEY: '{{env.CRADLEPOINT_ECM_API_KEY}}'
+  exposes:
+    - type: rest

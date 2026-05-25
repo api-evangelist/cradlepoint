@@ -1,0 +1,52 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Cradlepoint NetCloud Manager — Net Devices
+  description: >-
+    Modems and network interfaces on routers via NCM v2. Surfaces carrier,
+    signal, RSRP/RSRQ, IMEI, ICCID, and historical location for fleet
+    telemetry.
+  tags:
+    - Cradlepoint
+    - NetCloud
+    - Cellular
+    - Telemetry
+    - GPS
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+  - namespace: env
+    keys:
+      CRADLEPOINT_CP_API_ID: CRADLEPOINT_CP_API_ID
+      CRADLEPOINT_CP_API_KEY: CRADLEPOINT_CP_API_KEY
+      CRADLEPOINT_ECM_API_ID: CRADLEPOINT_ECM_API_ID
+      CRADLEPOINT_ECM_API_KEY: CRADLEPOINT_ECM_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: netcloud-manager-net-devices
+      baseUri: https://www.cradlepointecm.com/api/v2
+      description: NCM v2 NetDevices and Historical Locations.
+      resources:
+        - name: net-devices
+          path: /net_devices/
+          operations:
+            - name: listnetdevices
+              method: GET
+              description: List net devices (modems / WAN / LAN interfaces).
+              outputRawFormat: json
+        - name: historical-locations
+          path: /historical_locations/
+          operations:
+            - name: listhistoricallocations
+              method: GET
+              description: List historical GPS samples for routers.
+              outputRawFormat: json
+      authentication:
+        type: composite
+        headers:
+          X-CP-API-ID: '{{env.CRADLEPOINT_CP_API_ID}}'
+          X-CP-API-KEY: '{{env.CRADLEPOINT_CP_API_KEY}}'
+          X-ECM-API-ID: '{{env.CRADLEPOINT_ECM_API_ID}}'
+          X-ECM-API-KEY: '{{env.CRADLEPOINT_ECM_API_KEY}}'
+  exposes:
+    - type: rest

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/cradlepoint/main/json-schema/cradlepoint-router-schema.json",
+  "title": "Cradlepoint Router",
+  "description": "An NCM-managed Cradlepoint router (edge device) as returned by /api/v2/routers/.",
+  "type": "object",
+  "required": ["id", "account", "mac", "product", "state"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "NCM-assigned router ID."
+    },
+    "account": {
+      "type": "string",
+      "description": "Owning account ID."
+    },
+    "group": {
+      "type": ["string", "null"],
+      "description": "Group ID the router is assigned to, if any."
+    },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "mac": { "type": "string", "pattern": "^[0-9A-Fa-f:]{17}$" },
+    "serial_number": { "type": "string" },
+    "product": {
+      "type": "string",
+      "description": "Cradlepoint product line, e.g. IBR1700, IBR900, E300, E3000, R1900, R2100, W1850."
+    },
+    "actual_firmware": { "type": "string" },
+    "target_firmware": { "type": "string" },
+    "state": {
+      "type": "string",
+      "enum": ["online", "offline", "unknown"]
+    },
+    "last_seen_at": { "type": "string", "format": "date-time" },
+    "ipv4_address": { "type": "string", "format": "ipv4" },
+    "location": {
+      "type": "object",
+      "properties": {
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "accuracy": { "type": "number" }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  }
+}

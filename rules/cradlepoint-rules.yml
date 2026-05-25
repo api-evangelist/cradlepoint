@@ -1,0 +1,83 @@
+extends: [[spectral:oas, all]]
+documentationUrl: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+rules:
+  cradlepoint-info-contact:
+    description: NCM specs must surface a Cradlepoint / Ericsson support contact.
+    severity: warn
+    given: $.info
+    then:
+      field: contact
+      function: truthy
+
+  cradlepoint-server-must-be-ncm:
+    description: NCM v2 specs must target the production base URL.
+    severity: error
+    given: $.servers[*]
+    then:
+      field: url
+      function: pattern
+      functionOptions:
+        match: '^https://www\.cradlepointecm\.com/api/v2$'
+
+  cradlepoint-resource-paths-trailing-slash:
+    description: NCM v2 collection paths use a trailing slash (e.g. /routers/).
+    severity: warn
+    given: $.paths.*~
+    then:
+      function: pattern
+      functionOptions:
+        match: '/$'
+
+  cradlepoint-resource-paths-snake-case:
+    description: NCM v2 resource path segments are snake_case.
+    severity: warn
+    given: $.paths.*~
+    then:
+      function: pattern
+      functionOptions:
+        match: '^/[a-z0-9_/{}]+$'
+
+  cradlepoint-operation-tags-titlecase:
+    description: Operation tags should use Title Case singular nouns.
+    severity: warn
+    given: $.paths.*.*.tags[*]
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[A-Z][A-Za-z]+$'
+
+  cradlepoint-paired-key-auth:
+    description: NCM v2 requires paired Cradlepoint and NetCloud API-key headers.
+    severity: error
+    given: $.components.securitySchemes
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          required: [CradlepointApiKey, NetCloudApiKey]
+
+  cradlepoint-operation-summary-titlecase:
+    description: Operation summaries use Title Case.
+    severity: warn
+    given: $.paths.*.*.summary
+    then:
+      function: pattern
+      functionOptions:
+        match: '^([A-Z][a-zA-Z0-9]*)( [A-Z][a-zA-Z0-9]*)*$'
+
+  cradlepoint-pagination-limit-offset:
+    description: List endpoints expose `limit` and `offset` query parameters.
+    severity: warn
+    given: $.paths[*].get.parameters
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          contains:
+            type: object
+            properties:
+              name:
+                type: string
+                enum: [limit, offset]

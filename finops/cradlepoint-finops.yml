@@ -1,0 +1,76 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Cradlepoint
+providerId: cradlepoint
+created: '2026-05-25'
+modified: '2026-05-25'
+reconciled: false
+tags:
+  - FinOps
+  - FOCUS
+  - Wireless WAN
+  - 5G
+  - NetCloud
+description: >-
+  FOCUS-aligned FinOps view of the Cradlepoint commercial surface. Cradlepoint
+  billing is contract-driven (per-router NetCloud subscriptions plus
+  hardware, with optional SASE / Private 5G add-ons). There is no per-API-call
+  metered billing for the NetCloud Manager API itself; the API is included
+  with every NetCloud subscription. Customers see invoices through Ericsson
+  Enterprise Wireless Solutions or authorized partners and reconcile against
+  their NCM router inventory.
+sources:
+  - https://cradlepoint.com/products/netcloud-service/
+  - https://cradlepoint.com/products/netcloud-sase/
+  - https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Cradlepoint (Ericsson Enterprise Wireless Solutions)
+serviceCategory: Networking
+billingModel:
+  pricingCategory: Subscription
+  pricingUnits:
+    - device-year
+    - site-year
+  meteredUsage: false
+  commitmentDiscounts: true
+costAttribution:
+  primaryKey: router (NCM device ID)
+  secondaryKeys:
+    - account
+    - group
+    - subscription
+chargeCategories:
+  - id: hardware
+    name: Hardware
+    description: Per-router list/quote price for Cradlepoint edge devices (IBR / E300 / E3000 / R1900 / R2100 / W1850).
+  - id: netcloud-subscription
+    name: NetCloud Subscription
+    description: Annual or multi-year NetCloud tier (Essentials / Advanced / Advanced Plus) charged per managed router.
+  - id: netcloud-sase
+    name: NetCloud SASE
+    description: NetCloud Exchange Secure Connect, SD-WAN, ZTNA add-ons (per site / per user).
+  - id: private-5g
+    name: Ericsson Private 5G
+    description: Private cellular network deployments with Ericsson Private 5G integrated with Cradlepoint edge.
+  - id: support
+    name: Support and Services
+    description: Premium / 24x7 / on-site support packages and professional services.
+focusFields:
+  - field: ChargeCategory
+    value: One of Usage, Purchase, Tax (mapped from subscription / hardware / addon)
+  - field: ServiceCategory
+    value: Networking
+  - field: PricingUnit
+    value: device-year | site-year
+  - field: BillingAccountId
+    value: Cradlepoint / Ericsson sales account number
+recommendations:
+  - Tag NCM routers and groups by business unit so FOCUS BillingAccountId can be derived.
+  - Track NetCloud tier upgrades — they materially shift unit cost.
+  - Reconcile NCM router count against subscription count at renewal.
