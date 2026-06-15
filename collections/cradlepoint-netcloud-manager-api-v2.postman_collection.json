@@ -1,0 +1,1591 @@
+{
+  "item": [
+    {
+      "id": "ec533fc9-1646-4fcf-b1e4-887030a48841",
+      "name": "Accounts",
+      "description": {
+        "content": "Account and subaccount management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "15305ecc-dbc2-451d-b195-2305a6c6e02b",
+          "name": "List Accounts",
+          "request": {
+            "name": "List Accounts",
+            "description": {
+              "content": "List accounts and subaccounts visible to the authenticated NCM keys.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c5e628b1-83d8-4104-9ff0-c70079b94409",
+              "name": "Paginated list of accounts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"parent_account\": \"string\",\n      \"created_at\": \"1964-12-05T03:35:01.124Z\",\n      \"is_active\": true\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"parent_account\": \"string\",\n      \"created_at\": \"1976-06-04T00:50:39.869Z\",\n      \"is_active\": true\n    }\n  ],\n  \"meta\": {\n    \"limit\": 3947,\n    \"offset\": 1306,\n    \"total_count\": 5889,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c33d9cf5-0b90-4692-9759-4d603c0d3cf7",
+          "name": "Get An Account",
+          "request": {
+            "name": "Get An Account",
+            "description": {
+              "content": "Retrieve a single account by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e864f3e0-9ce7-479f-8995-ce6f30d75b70",
+              "name": "Account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"parent_account\": \"string\",\n  \"created_at\": \"1966-01-22T20:52:17.796Z\",\n  \"is_active\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "23f65633-209d-4291-9abf-2346204797a3",
+      "name": "ActivityLogs",
+      "description": {
+        "content": "Audit / activity logs across accounts",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "57e7fe49-d719-4018-87d0-02741485da53",
+          "name": "List Activity Logs",
+          "request": {
+            "name": "List Activity Logs",
+            "description": {
+              "content": "View activities and changes within the authenticated account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "activity_logs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9cc8076-2e0a-48e3-936a-4019d91a81ae",
+              "name": "Paginated list of activity-log entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "activity_logs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"actor\": \"string\",\n      \"action\": \"string\",\n      \"target\": \"string\",\n      \"created_at\": \"2013-09-26T23:11:42.045Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"actor\": \"string\",\n      \"action\": \"string\",\n      \"target\": \"string\",\n      \"created_at\": \"2022-12-07T08:59:58.759Z\"\n    }\n  ],\n  \"meta\": {\n    \"limit\": 8855,\n    \"offset\": 2773,\n    \"total_count\": 5137,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1923a364-ba74-4770-a873-53415c937833",
+      "name": "Alerts",
+      "description": {
+        "content": "Generated alerts",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5bb48824-aa4f-4a83-a694-f44659663085",
+          "name": "List Alerts",
+          "request": {
+            "name": "List Alerts",
+            "description": {
+              "content": "View alerts that have been generated in the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alerts",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_at__gt",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c5156a0-7e4a-43ec-9ef6-dc349e488d2b",
+              "name": "Paginated list of alerts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alerts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_at__gt",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"router\": \"string\",\n      \"type\": \"string\",\n      \"message\": \"string\",\n      \"severity\": \"info\",\n      \"created_at\": \"1958-08-31T18:50:58.293Z\",\n      \"acknowledged_at\": \"1975-10-18T06:01:15.289Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"router\": \"string\",\n      \"type\": \"string\",\n      \"message\": \"string\",\n      \"severity\": \"error\",\n      \"created_at\": \"1971-12-20T16:40:35.404Z\",\n      \"acknowledged_at\": \"1958-09-23T15:17:08.595Z\"\n    }\n  ],\n  \"meta\": {\n    \"limit\": 8910,\n    \"offset\": 7433,\n    \"total_count\": 5343,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e2d92bb5-31fe-4432-bc22-25023da59486",
+      "name": "AlertRules",
+      "description": {
+        "content": "Alert monitoring rule configuration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6f441620-48fa-43af-b93d-37682ad16552",
+          "name": "List Alert Rules",
+          "request": {
+            "name": "List Alert Rules",
+            "description": {
+              "content": "Alert-rule definitions monitoring health and status of the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alert_rules",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82b1942d-541f-426c-8840-f3c56e1c34d4",
+              "name": "Alert rules.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alert_rules",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"enabled\": true,\n      \"scope\": \"string\",\n      \"target\": \"string\",\n      \"push_destinations\": [\n        \"string\",\n        \"string\"\n      ],\n      \"created_at\": \"2016-03-29T18:16:24.867Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"enabled\": true,\n      \"scope\": \"string\",\n      \"target\": \"string\",\n      \"push_destinations\": [\n        \"string\",\n        \"string\"\n      ],\n      \"created_at\": \"2007-02-01T21:24:25.736Z\"\n    }\n  ],\n  \"meta\": {\n    \"limit\": 1215,\n    \"offset\": 5994,\n    \"total_count\": 6105,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c0f23f4-d59e-4a61-a8e2-d05bc0083049",
+          "name": "Create An Alert Rule",
+          "request": {
+            "name": "Create An Alert Rule",
+            "description": {
+              "content": "Configure a new alert rule.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alert_rules",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"scope\": \"<string>\",\n  \"target\": \"<string>\",\n  \"push_destinations\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"created_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ca4bf8a1-92a8-4816-8bd6-0b7a5b31ea1a",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alert_rules",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"scope\": \"<string>\",\n  \"target\": \"<string>\",\n  \"push_destinations\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"created_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"enabled\": true,\n  \"scope\": \"string\",\n  \"target\": \"string\",\n  \"push_destinations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"created_at\": \"1986-08-29T15:23:17.699Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1ddb7eb6-d318-465c-973a-7933edd46eb9",
+      "name": "AlertPushDestinations",
+      "description": {
+        "content": "Outbound webhook destinations for alert delivery",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5b5423ca-55e2-4ec9-823b-1b8a506111be",
+          "name": "List Alert Push Destinations",
+          "request": {
+            "name": "List Alert Push Destinations",
+            "description": {
+              "content": "Configured outbound HTTP destinations (webhooks) for alert delivery.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alert_push_destinations",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "83200eee-c42b-4abf-9858-93647b71b5e0",
+              "name": "Push destinations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alert_push_destinations",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"url\": \"https://McnoRNbttaGI.dbrQE+imjtINDXDp-8jRri9Q\",\n      \"method\": \"POST\",\n      \"headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      },\n      \"enabled\": false\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"url\": \"https://EwFuR.jvrqo1x3sruZSPLHqC5Zwc.2UK.o63XzfoG,S,9vxX\",\n      \"method\": \"POST\",\n      \"headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"enabled\": false\n    }\n  ],\n  \"meta\": {\n    \"limit\": 6198,\n    \"offset\": 3875,\n    \"total_count\": 3266,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "56a1c869-892d-4613-a201-4fc4665c792c",
+          "name": "Create An Alert Push Destination",
+          "request": {
+            "name": "Create An Alert Push Destination",
+            "description": {
+              "content": "Register a webhook URL that should receive alert JSON payloads.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alert_push_destinations",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"method\": \"POST\",\n  \"headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"enabled\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "563c9f6c-652f-4860-9a56-eff4b555c8ad",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alert_push_destinations",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"method\": \"POST\",\n  \"headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"enabled\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"url\": \"https://NGJmIdHsQVjBCvDQMusHQlGcPo.ezyVAgTdQhCnhJbUl\",\n  \"method\": \"POST\",\n  \"headers\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"enabled\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9611edcb-a0d9-43b6-b678-52a4cc1ecd59",
+      "name": "Groups",
+      "description": {
+        "content": "Logical device groupings",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "778cb807-3456-48e8-9496-e1959a07de23",
+          "name": "List Groups",
+          "request": {
+            "name": "List Groups",
+            "description": {
+              "content": "Logical device groupings used to share configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "groups",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "48c417d5-88d0-4bff-bb4f-9d83aa72401d",
+              "name": "Paginated list of groups.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"name\": \"string\",\n      \"product\": \"string\",\n      \"target_firmware\": \"string\",\n      \"config\": {\n        \"key_0\": 4970.1579525704\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"name\": \"string\",\n      \"product\": \"string\",\n      \"target_firmware\": \"string\",\n      \"config\": {\n        \"key_0\": 9870.282479530342\n      }\n    }\n  ],\n  \"meta\": {\n    \"limit\": 4254,\n    \"offset\": 9439,\n    \"total_count\": 824,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "754a73d9-d374-4ebc-82c8-7f48900f11c0",
+      "name": "Routers",
+      "description": {
+        "content": "Router (edge device) management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "443d76b7-33da-4a82-875b-d944f7e985be",
+          "name": "List Routers",
+          "request": {
+            "name": "List Routers",
+            "description": {
+              "content": "List routers visible to the authenticated NCM keys.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "routers",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "group",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "757c4556-7cf4-413d-bc05-564aeb796b15",
+              "name": "Paginated list of routers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "routers",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "group",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"group\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"mac\": \"string\",\n      \"serial_number\": \"string\",\n      \"product\": \"string\",\n      \"actual_firmware\": \"string\",\n      \"state\": \"online\",\n      \"last_seen_at\": \"1946-07-14T15:08:32.434Z\",\n      \"created_at\": \"1978-06-01T20:20:23.815Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"group\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"mac\": \"string\",\n      \"serial_number\": \"string\",\n      \"product\": \"string\",\n      \"actual_firmware\": \"string\",\n      \"state\": \"unknown\",\n      \"last_seen_at\": \"1950-03-23T13:18:29.819Z\",\n      \"created_at\": \"1978-02-26T03:10:03.047Z\"\n    }\n  ],\n  \"meta\": {\n    \"limit\": 7711,\n    \"offset\": 5107,\n    \"total_count\": 9741,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df4a80fe-604f-4723-bc97-0b1b0ea4c9f1",
+          "name": "Get A Router",
+          "request": {
+            "name": "Get A Router",
+            "description": {
+              "content": "Retrieve a single router by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "routers",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b379e595-3895-4b56-a280-43be72cfc1d5",
+              "name": "Router",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "routers",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"account\": \"string\",\n  \"group\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"mac\": \"string\",\n  \"serial_number\": \"string\",\n  \"product\": \"string\",\n  \"actual_firmware\": \"string\",\n  \"state\": \"online\",\n  \"last_seen_at\": \"2001-05-04T12:36:00.239Z\",\n  \"created_at\": \"2007-01-24T09:02:31.656Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2832b111-6fc5-4b47-845e-230cdd6b2363",
+          "name": "Update A Router",
+          "request": {
+            "name": "Update A Router",
+            "description": {
+              "content": "Update editable router fields such as `name`, `description`, `group`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "routers",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"account\": \"<string>\",\n  \"group\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"mac\": \"<string>\",\n  \"serial_number\": \"<string>\",\n  \"product\": \"<string>\",\n  \"actual_firmware\": \"<string>\",\n  \"state\": \"<string>\",\n  \"last_seen_at\": \"<dateTime>\",\n  \"created_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "141f7671-e6cc-4987-a1b2-9ac3df975590",
+              "name": "Updated router",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "routers",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"account\": \"<string>\",\n  \"group\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"mac\": \"<string>\",\n  \"serial_number\": \"<string>\",\n  \"product\": \"<string>\",\n  \"actual_firmware\": \"<string>\",\n  \"state\": \"<string>\",\n  \"last_seen_at\": \"<dateTime>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"account\": \"string\",\n  \"group\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"mac\": \"string\",\n  \"serial_number\": \"string\",\n  \"product\": \"string\",\n  \"actual_firmware\": \"string\",\n  \"state\": \"online\",\n  \"last_seen_at\": \"2001-05-04T12:36:00.239Z\",\n  \"created_at\": \"2007-01-24T09:02:31.656Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c81e1e1b-1ad7-4c7f-8c17-a7add6b731d1",
+      "name": "NetDevices",
+      "description": {
+        "content": "Modems, WAN devices, and network interfaces on routers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "419e9b67-eb25-48d1-86ab-15acd5a0f0e7",
+          "name": "List Net Devices",
+          "request": {
+            "name": "List Net Devices",
+            "description": {
+              "content": "Modems and network interfaces (WAN, LAN, modem, ethernet) on routers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "net_devices",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "router",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88cfff47-4d37-4ac8-a135-107098c5c6c9",
+              "name": "Paginated list of net devices.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "net_devices",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "router",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"router\": \"string\",\n      \"type\": \"string\",\n      \"connection_state\": \"string\",\n      \"carrier\": \"string\",\n      \"homecarrier\": \"string\",\n      \"signal_strength\": 6493,\n      \"rsrp\": 4718,\n      \"rsrq\": 1306,\n      \"iccid\": \"string\",\n      \"imei\": \"string\",\n      \"ipv4_address\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"router\": \"string\",\n      \"type\": \"string\",\n      \"connection_state\": \"string\",\n      \"carrier\": \"string\",\n      \"homecarrier\": \"string\",\n      \"signal_strength\": 5014,\n      \"rsrp\": 69,\n      \"rsrq\": 3064,\n      \"iccid\": \"string\",\n      \"imei\": \"string\",\n      \"ipv4_address\": \"string\"\n    }\n  ],\n  \"meta\": {\n    \"limit\": 8481,\n    \"offset\": 8497,\n    \"total_count\": 8882,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "399c177c-65df-4522-a126-c4d5fc3f5d93",
+      "name": "Locations",
+      "description": {
+        "content": "Current and historical router location",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4a14440e-50a0-4c84-950e-20399f359e8a",
+          "name": "List Historical Locations",
+          "request": {
+            "name": "List Historical Locations",
+            "description": {
+              "content": "Time-stamped GPS / location samples for routers (vehicle / mobile fleet use case).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "historical_locations",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "router",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_at__gt",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bb9448ee-a85f-48a5-81ff-9f7dfa10b607",
+              "name": "Paginated list of historical location samples.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "historical_locations",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "router",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_at__gt",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"router\": \"string\",\n      \"latitude\": 105.18462547644769,\n      \"longitude\": 7638.68123491284,\n      \"accuracy\": 1513.24957368695,\n      \"speed\": 9416.24503468072,\n      \"heading\": 8787.521228182779,\n      \"created_at\": \"1984-01-14T03:44:01.397Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"router\": \"string\",\n      \"latitude\": 7773.775613393944,\n      \"longitude\": 567.1988842972742,\n      \"accuracy\": 4158.253442797392,\n      \"speed\": 333.64385071401273,\n      \"heading\": 8323.520126696852,\n      \"created_at\": \"1987-01-28T13:28:15.301Z\"\n    }\n  ],\n  \"meta\": {\n    \"limit\": 5922,\n    \"offset\": 9389,\n    \"total_count\": 5460,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.cradlepointecm.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-CP-API-ID"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6b88a5a2-e9cc-46c6-b155-8a019c75f04a",
+    "name": "Cradlepoint NetCloud Manager API v2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API to the Cradlepoint NetCloud Manager (NCM) platform. Lets\nclient applications perform programmatically many of the same operations\navailable in the NCM user interface: enumerate accounts, manage routers\nand groups, configure them, listen to alerts, ingest device telemetry,\ntrack location history, and administer users and subscriptions.\n\nAuthentication uses two header pairs sent on every request:\n  * X-CP-API-ID / X-CP-API-KEY — Cradlepoint API keys (account-level,\n    used for API-usage tracking, available from the Getting Started page\n    of developer.cradlepoint.com).\n  * X-ECM-API-ID / X-ECM-API-KEY — NetCloud (ECM) API keys generated by\n    an NCM administrator from the Tools tab in NCM. These keys carry the\n    NCM role assignment (Administrator, Full Access User, Read Only User,\n    Diagnostic User) and authorize what the request can do.\n\n\nContact Support:\n Name: Ericsson Enterprise Wireless / Cradlepoint Support",
+      "type": "text/plain"
+    }
+  }
+}

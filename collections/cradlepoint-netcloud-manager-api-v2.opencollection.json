@@ -1,0 +1,410 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cradlepoint NetCloud Manager API v2",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-CP-API-ID",
+      "value": "{{X-CP-API-ID}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/accounts/",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "List accounts and subaccounts visible to the authenticated NCM keys."
+        },
+        {
+          "info": {
+            "name": "Get An Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/accounts/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single account by ID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ActivityLogs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Activity Logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/activity_logs/",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "View activities and changes within the authenticated account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Alerts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/alerts/",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_at__gt",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "View alerts that have been generated in the account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "AlertRules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Alert Rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/alert_rules/"
+          },
+          "docs": "Alert-rule definitions monitoring health and status of the account."
+        },
+        {
+          "info": {
+            "name": "Create An Alert Rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.cradlepointecm.com/api/v2/alert_rules/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Configure a new alert rule."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "AlertPushDestinations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Alert Push Destinations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/alert_push_destinations/"
+          },
+          "docs": "Configured outbound HTTP destinations (webhooks) for alert delivery."
+        },
+        {
+          "info": {
+            "name": "Create An Alert Push Destination",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.cradlepointecm.com/api/v2/alert_push_destinations/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Register a webhook URL that should receive alert JSON payloads."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/groups/",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "Logical device groupings used to share configuration."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Routers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Routers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/routers/",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "List routers visible to the authenticated NCM keys."
+        },
+        {
+          "info": {
+            "name": "Get A Router",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/routers/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single router by ID."
+        },
+        {
+          "info": {
+            "name": "Update A Router",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://www.cradlepointecm.com/api/v2/routers/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update editable router fields such as `name`, `description`, `group`."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "NetDevices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Net Devices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/net_devices/",
+            "params": [
+              {
+                "name": "router",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "Modems and network interfaces (WAN, LAN, modem, ethernet) on routers."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Historical Locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/historical_locations/",
+            "params": [
+              {
+                "name": "router",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_at__gt",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "Time-stamped GPS / location samples for routers (vehicle / mobile fleet use case)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
