@@ -2,20 +2,19 @@
   "repo": "cradlepoint",
   "feeds": [
     {
-      "source": "https://cradlepoint.ericsson.com/blog/",
-      "feed_url": "https://cradlepoint.ericsson.com/blog/",
-      "title": "",
-      "saved": 0,
-      "method": "none"
+      "source": "https://cradlepoint.com/resources/blog/",
+      "feed_url": "",
+      "saved": 1,
+      "method": "agent-scrape",
+      "note": "301-redirects to cradlepoint.ericsson.com/blog/"
     },
     {
       "source": "https://github.com/cradlepoint/container-samples",
-      "feed_url": "https://github.com/cradlepoint/container-samples",
-      "title": "",
       "saved": 0,
-      "method": "none"
+      "error": "not a blog feed"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 1,
+  "fetched": "2026-06-27T12:34:29Z",
+  "agent_pulled": "2026-06-27"
 }

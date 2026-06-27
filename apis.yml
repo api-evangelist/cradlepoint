@@ -126,7 +126,7 @@ apis:
       - Python
       - Routers
     properties:
-      - type: SDK
+      - type: SDKs
         url: https://github.com/cradlepoint/sdk-samples
       - type: Documentation
         url: https://customer.cradlepoint.com/s/article/NCOS-Router-SDK-Developers-Guide
