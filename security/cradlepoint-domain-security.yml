@@ -1,0 +1,39 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: cradlepoint.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 16 17:48:39 2026 GMT
+  hsts: true
+  hsts_max_age: 31622400
+- host: customer.cradlepoint.com
+  https: true
+  tls_cert_error: '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get
+    local issuer certificate (_ssl.c:1082)'
+  hsts: null
+- host: www.cradlepointecm.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  9 05:58:51 2026 GMT
+  hsts: null
+domains:
+- domain: cradlepoint.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: cradlepointecm.com
+  dnssec: false
+  caa:
+  - 0 issuewild "awstrust.com"
+  - 0 issuewild "godaddy.com"
+  - 0 issuewild "letsencrypt.org"
+  - 0 issuewild "pki.goog"
+  - 0 issuewild "pki.goog; cansignhttpexchanges=yes"
+  - 0 issue "amazon.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

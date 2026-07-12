@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/cradlepoint-netcloud-manager-api-v2-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: CradlepointApiKey
+  type: apiKey
+  in: header
+  parameter: X-CP-API-ID
+  description: Cradlepoint account API ID (paired with X-CP-API-KEY).
+  sources:
+  - openapi/cradlepoint-netcloud-manager-api-v2-openapi.yml
+- name: NetCloudApiKey
+  type: apiKey
+  in: header
+  parameter: X-ECM-API-ID
+  description: NCM tenant API ID (paired with X-ECM-API-KEY), carries the NCM role.
+  sources:
+  - openapi/cradlepoint-netcloud-manager-api-v2-openapi.yml

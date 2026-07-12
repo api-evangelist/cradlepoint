@@ -133,6 +133,12 @@ apis:
       - type: Language
         url: https://www.python.org/
 common:
+  - type: VulnerabilityDisclosure
+    url: security/cradlepoint-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/cradlepoint-domain-security.yml
+  - type: Authentication
+    url: authentication/cradlepoint-authentication.yml
   - type: Website
     url: https://cradlepoint.com
   - type: Company
