@@ -133,6 +133,8 @@ apis:
       - type: Language
         url: https://www.python.org/
 common:
+  - type: AgenticAccess
+    url: agentic-access/cradlepoint-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/cradlepoint-vulnerability-disclosure.yml
   - type: DomainSecurity
