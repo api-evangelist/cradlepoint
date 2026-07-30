@@ -13,9 +13,22 @@ description: >-
   Wireless docs portal (docs.cradlepoint.com) host the Getting Started guides, API reference, sample collections, and
   Postman bundles.
 type: Index
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cradlepoint.png
 tags:
   - Wireless WAN
   - 5G
@@ -36,102 +49,314 @@ created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.20'
 apis:
-  - aid: cradlepoint:netcloud-manager-api-v2
-    name: Cradlepoint NetCloud Manager API v2
-    description: >-
-      RESTful API for the NetCloud Manager (NCM) platform. Programmatic access to accounts, routers, groups,
-      configuration_managers, alerts and alert_rules, alert_push_destinations, activity_logs, locations and
-      historical_locations, net_devices, net_device_signal_samples, net_device_usage_samples, net_device_health,
-      net_device_metrics, router_alerts, router_lans, router_state_samples, users, subscriptions, and firmware. Base URL
-      https://www.cradlepointecm.com/api/v2/. Authentication uses two paired key sets sent as headers on every request —
-      X-CP-API-ID / X-CP-API-KEY (account-level Cradlepoint API keys, for usage tracking) and X-ECM-API-ID /
-      X-ECM-API-KEY (NCM-tenant API keys generated from the NCM Tools tab; carry the Administrator / Full Access /
-      Read-Only / Diagnostic role grants). Supports GET, POST, PUT, PATCH, DELETE; not every method is supported on
-      every resource. Documented with Swagger 1.2.
-    humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
-    baseURL: https://www.cradlepointecm.com/api/v2/
-    tags:
-      - NetCloud
-      - Routers
-      - Wireless WAN
-      - Edge
-      - Cellular
-    properties:
-      - type: Documentation
-        url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
-      - type: Documentation
-        url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
-      - type: GettingStarted
-        url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
-      - type: Developer
-        url: https://developer.cradlepoint.com/
-      - type: OpenAPI
-        url: openapi/cradlepoint-netcloud-manager-api-v2-openapi.yml
-      - type: Postman
-        url: https://developer.cradlepoint.com/documentation/samples
-      - type: SampleCode
-        url: https://github.com/cradlepoint/api-samples
-      - type: JSONSchema
-        url: json-schema/cradlepoint-router-schema.json
-      - type: JSONSchema
-        url: json-schema/cradlepoint-alert-schema.json
-      - type: JSONLD
-        url: json-ld/cradlepoint-context.jsonld
-  - aid: cradlepoint:netcloud-manager-api-v3
-    name: Cradlepoint NetCloud Manager API v3
-    description: >-
-      The next-generation NetCloud Manager API. Documented with OpenAPI 3.0, authenticated with bearer tokens, designed
-      for improved performance, stability, and usability over API v2. Coexists with v2 during a multi-year transition
-      window; v3 covers core router, device, alert, group, and account operations.
-    humanURL: https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3
-    tags:
-      - NetCloud
-      - Routers
-      - 5G
-    properties:
-      - type: Documentation
-        url: https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3
-      - type: Developer
-        url: https://developer.cradlepoint.com/
-      - type: SampleCode
-        url: https://github.com/cradlepoint/api-samples
-  - aid: cradlepoint:netcloud-webhooks
-    name: Cradlepoint NetCloud Alert Webhooks
-    description: >-
-      Outbound HTTP destinations (alert_push_destinations) configured via the NCM API or UI to receive real-time JSON
-      alert payloads when NCM alert rules fire (router offline, signal degradation, configuration change, subscription
-      expiration, threshold breach). Each destination is a URL + optional auth headers; payload includes account,
-      router, alert type, timestamp, and contextual metadata.
-    humanURL: https://developer.cradlepoint.com/documentation/webhooks
-    tags:
-      - Webhooks
-      - Events
-      - Alerts
-    properties:
-      - type: Documentation
-        url: https://developer.cradlepoint.com/documentation/webhooks
-      - type: Documentation
-        url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
-  - aid: cradlepoint:netcloud-router-sdk
-    name: Cradlepoint NetCloud Router SDK
-    description: >-
-      On-router Python SDK and toolchain (the "SDK" / "Router SDK") for building and deploying custom applications onto
-      Cradlepoint routers running NetCloud OS. Lets developers write Python apps that read router configuration, GPIO,
-      GPS, modem signal, and connection state, and that can be packaged and deployed across a fleet via NCM. Sample apps
-      in cradlepoint/sdk-samples cover GPS forwarding, modem diagnostics, serial passthrough, MQTT publishing, and more.
-    humanURL: https://github.com/cradlepoint/sdk-samples
-    tags:
-      - SDK
-      - Edge
-      - Python
-      - Routers
-    properties:
-      - type: SDKs
-        url: https://github.com/cradlepoint/sdk-samples
-      - type: Documentation
-        url: https://customer.cradlepoint.com/s/article/NCOS-Router-SDK-Developers-Guide
-      - type: Language
-        url: https://www.python.org/
+- aid: cradlepoint:netcloud-manager-api-v3
+  name: Cradlepoint NetCloud Manager API v3
+  description: >-
+    The next-generation NetCloud Manager API. Documented with OpenAPI 3.0, authenticated with bearer tokens,
+    designed for improved performance, stability, and usability over API v2. Coexists with v2 during a
+    multi-year transition window; v3 covers core router, device, alert, group, and account operations.
+  humanURL: https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3
+  tags:
+  - NetCloud
+  - Routers
+  - 5G
+  properties:
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+- aid: cradlepoint:netcloud-webhooks
+  name: Cradlepoint NetCloud Alert Webhooks
+  description: >-
+    Outbound HTTP destinations (alert_push_destinations) configured via the NCM API or UI to receive real-time
+    JSON alert payloads when NCM alert rules fire (router offline, signal degradation, configuration change,
+    subscription expiration, threshold breach). Each destination is a URL + optional auth headers; payload
+    includes account, router, alert type, timestamp, and contextual metadata.
+  humanURL: https://developer.cradlepoint.com/documentation/webhooks
+  tags:
+  - Webhooks
+  - Events
+  - Alerts
+  properties:
+  - type: Documentation
+    url: https://developer.cradlepoint.com/documentation/webhooks
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+- aid: cradlepoint:netcloud-router-sdk
+  name: Cradlepoint NetCloud Router SDK
+  description: >-
+    On-router Python SDK and toolchain (the "SDK" / "Router SDK") for building and deploying custom applications
+    onto Cradlepoint routers running NetCloud OS. Lets developers write Python apps that read router configuration,
+    GPIO, GPS, modem signal, and connection state, and that can be packaged and deployed across a fleet
+    via NCM. Sample apps in cradlepoint/sdk-samples cover GPS forwarding, modem diagnostics, serial passthrough,
+    MQTT publishing, and more.
+  humanURL: https://github.com/cradlepoint/sdk-samples
+  tags:
+  - SDK
+  - Edge
+  - Python
+  - Routers
+  properties:
+  - type: SDKs
+    url: https://github.com/cradlepoint/sdk-samples
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCOS-Router-SDK-Developers-Guide
+  - type: Language
+    url: https://www.python.org/
+- aid: cradlepoint:cradlepoint-accounts-api
+  name: Cradlepoint Accounts API
+  description: Account and subaccount management
+  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
+- aid: cradlepoint:cradlepoint-activitylogs-api
+  name: Cradlepoint ActivityLogs API
+  description: Audit / activity logs across accounts
+  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - ActivityLogs
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-activitylogs-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
+- aid: cradlepoint:cradlepoint-alertpushdestinations-api
+  name: Cradlepoint AlertPushDestinations API
+  description: Outbound webhook destinations for alert delivery
+  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - AlertPushDestinations
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-alertpushdestinations-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
+- aid: cradlepoint:cradlepoint-alertrules-api
+  name: Cradlepoint AlertRules API
+  description: Alert monitoring rule configuration
+  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - AlertRules
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-alertrules-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
+- aid: cradlepoint:cradlepoint-alerts-api
+  name: Cradlepoint Alerts API
+  description: Generated alerts
+  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - Alerts
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-alerts-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
+- aid: cradlepoint:cradlepoint-groups-api
+  name: Cradlepoint Groups API
+  description: Logical device groupings
+  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-groups-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
+- aid: cradlepoint:cradlepoint-locations-api
+  name: Cradlepoint Locations API
+  description: Current and historical router location
+  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - Locations
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-locations-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
+- aid: cradlepoint:cradlepoint-netdevices-api
+  name: Cradlepoint NetDevices API
+  description: Modems, WAN devices, and network interfaces on routers
+  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - NetDevices
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-netdevices-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
+- aid: cradlepoint:cradlepoint-routers-api
+  name: Cradlepoint Routers API
+  description: Router (edge device) management
+  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - Routers
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-routers-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/cradlepoint-agentic-access.yml
