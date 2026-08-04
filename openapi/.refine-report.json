@@ -1,0 +1,30 @@
+{
+  "provider": "cradlepoint",
+  "sources": [
+    "cradlepoint-accounts-api-openapi.yml",
+    "cradlepoint-activitylogs-api-openapi.yml",
+    "cradlepoint-alertpushdestinations-api-openapi.yml",
+    "cradlepoint-alertrules-api-openapi.yml",
+    "cradlepoint-alerts-api-openapi.yml",
+    "cradlepoint-groups-api-openapi.yml",
+    "cradlepoint-locations-api-openapi.yml",
+    "cradlepoint-netdevices-api-openapi.yml",
+    "cradlepoint-routers-api-openapi.yml"
+  ],
+  "outputs": [
+    "cradlepoint-accounts-api-openapi.yml",
+    "cradlepoint-activitylogs-api-openapi.yml",
+    "cradlepoint-alertpushdestinations-api-openapi.yml",
+    "cradlepoint-alertrules-api-openapi.yml",
+    "cradlepoint-alerts-api-openapi.yml",
+    "cradlepoint-groups-api-openapi.yml",
+    "cradlepoint-locations-api-openapi.yml",
+    "cradlepoint-netdevices-api-openapi.yml",
+    "cradlepoint-routers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
