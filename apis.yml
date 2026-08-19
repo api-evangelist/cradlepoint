@@ -47,7 +47,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/cradlepoint/refs/heads/main/apis.yml
 created: '2026-05-25'
 modified: '2026-05-25'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
 - aid: cradlepoint:netcloud-manager-api-v3
   name: Cradlepoint NetCloud Manager API v3
