@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts Alerts API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-CP-API-ID",
+      "value": "{{X-CP-API-ID}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Alerts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/alerts/",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_at__gt",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "View alerts that have been generated in the account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

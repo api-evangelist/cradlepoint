@@ -1,0 +1,169 @@
+{
+  "item": [
+    {
+      "id": "33c72e2d-ea59-45ab-babf-be2f860f5157",
+      "name": "Locations",
+      "description": {
+        "content": "Current and historical router location",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b7d8bee5-244d-4679-b8b4-534a149e8bb0",
+          "name": "List Historical Locations",
+          "request": {
+            "name": "List Historical Locations",
+            "description": {
+              "content": "Time-stamped GPS / location samples for routers (vehicle / mobile fleet use case).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "historical_locations",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "router",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_at__gt",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c713bf86-1a9d-4bcb-9e16-8772e9d1d825",
+              "name": "Paginated list of historical location samples.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "historical_locations",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "router",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_at__gt",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"router\": \"string\",\n      \"latitude\": 2331.7147935758576,\n      \"longitude\": 6993.4228802491425,\n      \"accuracy\": 3131.6775890652384,\n      \"speed\": 4348.165137425059,\n      \"heading\": 8468.412592688694,\n      \"created_at\": \"1972-03-04T15:27:19.325Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"router\": \"string\",\n      \"latitude\": 1833.5536756352055,\n      \"longitude\": 4160.104082830828,\n      \"accuracy\": 3820.7841822021105,\n      \"speed\": 9919.26806612978,\n      \"heading\": 5861.040636626267,\n      \"created_at\": \"1988-12-26T19:05:01.897Z\"\n    }\n  ],\n  \"meta\": {\n    \"limit\": 4376,\n    \"offset\": 6470,\n    \"total_count\": 7672,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.cradlepointecm.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-CP-API-ID"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "aac8cf6d-31a6-4078-ba17-bf4cdaf21644",
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts Locations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API to the Cradlepoint NetCloud Manager (NCM) platform. Lets\nclient applications perform programmatically many of the same operations\navailable in the NCM user interface: enumerate accounts, manage routers\nand groups, configure them, listen to alerts, ingest device telemetry,\ntrack location history, and administer users and subscriptions.\n\nAuthentication uses two header pairs sent on every request:\n  * X-CP-API-ID / X-CP-API-KEY — Cradlepoint API keys (account-level,\n    used for API-usage tracking, available from the Getting Started page\n    of developer.cradlepoint.com).\n  * X-ECM-API-ID / X-ECM-API-KEY — NetCloud (ECM) API keys generated by\n    an NCM administrator from the Tools tab in NCM. These keys carry the\n    NCM role assignment (Administrator, Full Access User, Read Only User,\n    Diagnostic User) and authorize what the request can do.\n\n\nContact Support:\n Name: Ericsson Enterprise Wireless / Cradlepoint Support",
+      "type": "text/plain"
+    }
+  }
+}

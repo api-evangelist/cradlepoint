@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts Locations API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-CP-API-ID",
+      "value": "{{X-CP-API-ID}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Historical Locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/historical_locations/",
+            "params": [
+              {
+                "name": "router",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_at__gt",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "Time-stamped GPS / location samples for routers (vehicle / mobile fleet use case)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

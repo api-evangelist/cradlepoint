@@ -1,0 +1,230 @@
+{
+  "item": [
+    {
+      "id": "a2bb95b7-a4f2-470c-82d1-629ba84f8aca",
+      "name": "AlertRules",
+      "description": {
+        "content": "Alert monitoring rule configuration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b8ac91fc-b32d-4bc3-86ad-e09a1e8e6fbf",
+          "name": "List Alert Rules",
+          "request": {
+            "name": "List Alert Rules",
+            "description": {
+              "content": "Alert-rule definitions monitoring health and status of the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alert_rules",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4decafc-67df-4595-80dc-e83dc37ad662",
+              "name": "Alert rules.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alert_rules",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"enabled\": false,\n      \"scope\": \"string\",\n      \"target\": \"string\",\n      \"push_destinations\": [\n        \"string\",\n        \"string\"\n      ],\n      \"created_at\": \"2011-03-31T09:06:11.833Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"enabled\": true,\n      \"scope\": \"string\",\n      \"target\": \"string\",\n      \"push_destinations\": [\n        \"string\",\n        \"string\"\n      ],\n      \"created_at\": \"1970-10-23T05:53:48.925Z\"\n    }\n  ],\n  \"meta\": {\n    \"limit\": 6395,\n    \"offset\": 3354,\n    \"total_count\": 7280,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "59ff4ded-0f66-4145-8753-bba30324ba39",
+          "name": "Create An Alert Rule",
+          "request": {
+            "name": "Create An Alert Rule",
+            "description": {
+              "content": "Configure a new alert rule.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alert_rules",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"scope\": \"<string>\",\n  \"target\": \"<string>\",\n  \"push_destinations\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"created_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4c1fedab-bdf4-403e-9480-8e6878c782fe",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alert_rules",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"scope\": \"<string>\",\n  \"target\": \"<string>\",\n  \"push_destinations\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"created_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"enabled\": false,\n  \"scope\": \"string\",\n  \"target\": \"string\",\n  \"push_destinations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"created_at\": \"2005-12-23T04:29:08.592Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.cradlepointecm.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-CP-API-ID"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1c98708f-ccff-4848-9810-1d0203ef3966",
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts AlertRules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API to the Cradlepoint NetCloud Manager (NCM) platform. Lets\nclient applications perform programmatically many of the same operations\navailable in the NCM user interface: enumerate accounts, manage routers\nand groups, configure them, listen to alerts, ingest device telemetry,\ntrack location history, and administer users and subscriptions.\n\nAuthentication uses two header pairs sent on every request:\n  * X-CP-API-ID / X-CP-API-KEY — Cradlepoint API keys (account-level,\n    used for API-usage tracking, available from the Getting Started page\n    of developer.cradlepoint.com).\n  * X-ECM-API-ID / X-ECM-API-KEY — NetCloud (ECM) API keys generated by\n    an NCM administrator from the Tools tab in NCM. These keys carry the\n    NCM role assignment (Administrator, Full Access User, Read Only User,\n    Diagnostic User) and authorize what the request can do.\n\n\nContact Support:\n Name: Ericsson Enterprise Wireless / Cradlepoint Support",
+      "type": "text/plain"
+    }
+  }
+}

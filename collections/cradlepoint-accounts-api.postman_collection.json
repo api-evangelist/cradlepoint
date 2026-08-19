@@ -1,0 +1,249 @@
+{
+  "item": [
+    {
+      "id": "23dc2812-e0c5-473a-90fa-7fde0d374bf1",
+      "name": "Accounts",
+      "description": {
+        "content": "Account and subaccount management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2ea1b73b-d5c1-42a7-99dc-2c8c12c7eccb",
+          "name": "List Accounts",
+          "request": {
+            "name": "List Accounts",
+            "description": {
+              "content": "List accounts and subaccounts visible to the authenticated NCM keys.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54142cb3-01cf-4884-8dd3-e450141f7085",
+              "name": "Paginated list of accounts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"parent_account\": \"string\",\n      \"created_at\": \"1995-09-12T03:36:04.747Z\",\n      \"is_active\": true\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"parent_account\": \"string\",\n      \"created_at\": \"1952-10-18T07:34:11.416Z\",\n      \"is_active\": true\n    }\n  ],\n  \"meta\": {\n    \"limit\": 4108,\n    \"offset\": 7815,\n    \"total_count\": 6154,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aae2242c-1e33-4e32-ba74-6bfb714d7b0d",
+          "name": "Get An Account",
+          "request": {
+            "name": "Get An Account",
+            "description": {
+              "content": "Retrieve a single account by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "99615446-5dc3-4fdd-b933-57fc3e688407",
+              "name": "Account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"parent_account\": \"string\",\n  \"created_at\": \"1988-04-04T20:59:42.261Z\",\n  \"is_active\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.cradlepointecm.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-CP-API-ID"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bf894abe-cf97-430b-8293-cf3d007ce548",
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API to the Cradlepoint NetCloud Manager (NCM) platform. Lets\nclient applications perform programmatically many of the same operations\navailable in the NCM user interface: enumerate accounts, manage routers\nand groups, configure them, listen to alerts, ingest device telemetry,\ntrack location history, and administer users and subscriptions.\n\nAuthentication uses two header pairs sent on every request:\n  * X-CP-API-ID / X-CP-API-KEY — Cradlepoint API keys (account-level,\n    used for API-usage tracking, available from the Getting Started page\n    of developer.cradlepoint.com).\n  * X-ECM-API-ID / X-ECM-API-KEY — NetCloud (ECM) API keys generated by\n    an NCM administrator from the Tools tab in NCM. These keys carry the\n    NCM role assignment (Administrator, Full Access User, Read Only User,\n    Diagnostic User) and authorize what the request can do.\n\n\nContact Support:\n Name: Ericsson Enterprise Wireless / Cradlepoint Support",
+      "type": "text/plain"
+    }
+  }
+}

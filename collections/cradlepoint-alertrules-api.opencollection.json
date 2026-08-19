@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts AlertRules API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-CP-API-ID",
+      "value": "{{X-CP-API-ID}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AlertRules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Alert Rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/alert_rules/"
+          },
+          "docs": "Alert-rule definitions monitoring health and status of the account."
+        },
+        {
+          "info": {
+            "name": "Create An Alert Rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.cradlepointecm.com/api/v2/alert_rules/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Configure a new alert rule."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

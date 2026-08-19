@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts ActivityLogs API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-CP-API-ID",
+      "value": "{{X-CP-API-ID}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ActivityLogs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Activity Logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/activity_logs/",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "View activities and changes within the authenticated account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

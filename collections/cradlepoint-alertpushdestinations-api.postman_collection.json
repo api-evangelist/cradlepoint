@@ -1,0 +1,230 @@
+{
+  "item": [
+    {
+      "id": "4b27ea0d-c4c5-4e54-a7e2-ef9b281ec9bd",
+      "name": "AlertPushDestinations",
+      "description": {
+        "content": "Outbound webhook destinations for alert delivery",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f1664793-279e-4604-84e6-59c71ae0c18e",
+          "name": "List Alert Push Destinations",
+          "request": {
+            "name": "List Alert Push Destinations",
+            "description": {
+              "content": "Configured outbound HTTP destinations (webhooks) for alert delivery.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alert_push_destinations",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2cde0aeb-2eb8-412a-abe1-99fe9e3523c9",
+              "name": "Push destinations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alert_push_destinations",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"url\": \"http://DfXjXadBgJCpGJyARnrtkW.srnm\",\n      \"method\": \"POST\",\n      \"headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"enabled\": true\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"url\": \"http://EZuPUlmeLwoYPe.lyltK5OZ5tnbtEosMzKHHEnvypfSN\",\n      \"method\": \"POST\",\n      \"headers\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"enabled\": true\n    }\n  ],\n  \"meta\": {\n    \"limit\": 4987,\n    \"offset\": 7694,\n    \"total_count\": 8381,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "742f0b78-dcec-4c10-8ec9-da13ff14f7c9",
+          "name": "Create An Alert Push Destination",
+          "request": {
+            "name": "Create An Alert Push Destination",
+            "description": {
+              "content": "Register a webhook URL that should receive alert JSON payloads.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alert_push_destinations",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"method\": \"POST\",\n  \"headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"enabled\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "253e0793-6d40-4ada-be5b-0d08ed83bffd",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alert_push_destinations",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"method\": \"POST\",\n  \"headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"enabled\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"url\": \"http://VkGHgpMCbOpeYLrksSlrnIqODaYOdCL.swvehDtt4vsrJIfZ1y0djUsSr.8CzJvq3dBVhgU6E+Bcb3pdt-t1xaLrFvZ5VkATQgxNG8gM\",\n  \"method\": \"POST\",\n  \"headers\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"enabled\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.cradlepointecm.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-CP-API-ID"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2a46fb8e-afae-4e40-988e-0afe04f05fbf",
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts AlertPushDestinations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API to the Cradlepoint NetCloud Manager (NCM) platform. Lets\nclient applications perform programmatically many of the same operations\navailable in the NCM user interface: enumerate accounts, manage routers\nand groups, configure them, listen to alerts, ingest device telemetry,\ntrack location history, and administer users and subscriptions.\n\nAuthentication uses two header pairs sent on every request:\n  * X-CP-API-ID / X-CP-API-KEY — Cradlepoint API keys (account-level,\n    used for API-usage tracking, available from the Getting Started page\n    of developer.cradlepoint.com).\n  * X-ECM-API-ID / X-ECM-API-KEY — NetCloud (ECM) API keys generated by\n    an NCM administrator from the Tools tab in NCM. These keys carry the\n    NCM role assignment (Administrator, Full Access User, Read Only User,\n    Diagnostic User) and authorize what the request can do.\n\n\nContact Support:\n Name: Ericsson Enterprise Wireless / Cradlepoint Support",
+      "type": "text/plain"
+    }
+  }
+}

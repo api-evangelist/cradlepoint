@@ -1,0 +1,386 @@
+{
+  "item": [
+    {
+      "id": "915379e1-b5f1-4198-a642-6f4f300c3fc0",
+      "name": "Routers",
+      "description": {
+        "content": "Router (edge device) management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2bdf80ff-d38b-4508-aacf-0e85d396d32c",
+          "name": "List Routers",
+          "request": {
+            "name": "List Routers",
+            "description": {
+              "content": "List routers visible to the authenticated NCM keys.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "routers",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "group",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e229fbfd-e721-450d-8ad7-f65cc6c4e65b",
+              "name": "Paginated list of routers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "routers",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "group",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"group\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"mac\": \"string\",\n      \"serial_number\": \"string\",\n      \"product\": \"string\",\n      \"actual_firmware\": \"string\",\n      \"state\": \"offline\",\n      \"last_seen_at\": \"1962-06-02T14:10:42.030Z\",\n      \"created_at\": \"1996-11-25T11:14:56.743Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"group\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"mac\": \"string\",\n      \"serial_number\": \"string\",\n      \"product\": \"string\",\n      \"actual_firmware\": \"string\",\n      \"state\": \"unknown\",\n      \"last_seen_at\": \"2020-01-24T11:21:50.502Z\",\n      \"created_at\": \"1979-02-26T09:22:48.750Z\"\n    }\n  ],\n  \"meta\": {\n    \"limit\": 2090,\n    \"offset\": 9900,\n    \"total_count\": 7054,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "82a134d7-b14a-450d-9e88-7b000b42b1a0",
+          "name": "Get A Router",
+          "request": {
+            "name": "Get A Router",
+            "description": {
+              "content": "Retrieve a single router by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "routers",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5dc830c-686d-41ad-8d77-64994c923ffa",
+              "name": "Router",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "routers",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"account\": \"string\",\n  \"group\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"mac\": \"string\",\n  \"serial_number\": \"string\",\n  \"product\": \"string\",\n  \"actual_firmware\": \"string\",\n  \"state\": \"online\",\n  \"last_seen_at\": \"1965-04-03T03:54:53.335Z\",\n  \"created_at\": \"1996-05-18T21:56:43.247Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1f7f18bc-e6ba-4c95-99c2-50b3fa287e36",
+          "name": "Update A Router",
+          "request": {
+            "name": "Update A Router",
+            "description": {
+              "content": "Update editable router fields such as `name`, `description`, `group`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "routers",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"account\": \"<string>\",\n  \"group\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"mac\": \"<string>\",\n  \"serial_number\": \"<string>\",\n  \"product\": \"<string>\",\n  \"actual_firmware\": \"<string>\",\n  \"state\": \"<string>\",\n  \"last_seen_at\": \"<dateTime>\",\n  \"created_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2f12bfec-5599-4eb3-95bf-eb24258eb20f",
+              "name": "Updated router",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "routers",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"account\": \"<string>\",\n  \"group\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"mac\": \"<string>\",\n  \"serial_number\": \"<string>\",\n  \"product\": \"<string>\",\n  \"actual_firmware\": \"<string>\",\n  \"state\": \"<string>\",\n  \"last_seen_at\": \"<dateTime>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"account\": \"string\",\n  \"group\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"mac\": \"string\",\n  \"serial_number\": \"string\",\n  \"product\": \"string\",\n  \"actual_firmware\": \"string\",\n  \"state\": \"online\",\n  \"last_seen_at\": \"1965-04-03T03:54:53.335Z\",\n  \"created_at\": \"1996-05-18T21:56:43.247Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.cradlepointecm.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-CP-API-ID"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f5b614bf-8807-46dd-bf88-641ac1195ebe",
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts Routers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API to the Cradlepoint NetCloud Manager (NCM) platform. Lets\nclient applications perform programmatically many of the same operations\navailable in the NCM user interface: enumerate accounts, manage routers\nand groups, configure them, listen to alerts, ingest device telemetry,\ntrack location history, and administer users and subscriptions.\n\nAuthentication uses two header pairs sent on every request:\n  * X-CP-API-ID / X-CP-API-KEY — Cradlepoint API keys (account-level,\n    used for API-usage tracking, available from the Getting Started page\n    of developer.cradlepoint.com).\n  * X-ECM-API-ID / X-ECM-API-KEY — NetCloud (ECM) API keys generated by\n    an NCM administrator from the Tools tab in NCM. These keys carry the\n    NCM role assignment (Administrator, Full Access User, Read Only User,\n    Diagnostic User) and authorize what the request can do.\n\n\nContact Support:\n Name: Ericsson Enterprise Wireless / Cradlepoint Support",
+      "type": "text/plain"
+    }
+  }
+}

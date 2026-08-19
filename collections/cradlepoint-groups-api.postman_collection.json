@@ -1,0 +1,151 @@
+{
+  "item": [
+    {
+      "id": "e1f147f3-7df4-4d30-86ea-b3c21123f7f2",
+      "name": "Groups",
+      "description": {
+        "content": "Logical device groupings",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3ec427ef-ae07-4d2a-a8c2-9ba072622c5a",
+          "name": "List Groups",
+          "request": {
+            "name": "List Groups",
+            "description": {
+              "content": "Logical device groupings used to share configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "groups",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9c1d703e-213f-4877-ac1a-b02650a3a65c",
+              "name": "Paginated list of groups.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"name\": \"string\",\n      \"product\": \"string\",\n      \"target_firmware\": \"string\",\n      \"config\": {\n        \"key_0\": 8387,\n        \"key_1\": false\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"name\": \"string\",\n      \"product\": \"string\",\n      \"target_firmware\": \"string\",\n      \"config\": {\n        \"key_0\": \"string\",\n        \"key_1\": 5876.284298520042\n      }\n    }\n  ],\n  \"meta\": {\n    \"limit\": 426,\n    \"offset\": 4795,\n    \"total_count\": 5268,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.cradlepointecm.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-CP-API-ID"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "abe0da20-76f5-4845-8a1b-d5eb86f1175f",
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts Groups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API to the Cradlepoint NetCloud Manager (NCM) platform. Lets\nclient applications perform programmatically many of the same operations\navailable in the NCM user interface: enumerate accounts, manage routers\nand groups, configure them, listen to alerts, ingest device telemetry,\ntrack location history, and administer users and subscriptions.\n\nAuthentication uses two header pairs sent on every request:\n  * X-CP-API-ID / X-CP-API-KEY — Cradlepoint API keys (account-level,\n    used for API-usage tracking, available from the Getting Started page\n    of developer.cradlepoint.com).\n  * X-ECM-API-ID / X-ECM-API-KEY — NetCloud (ECM) API keys generated by\n    an NCM administrator from the Tools tab in NCM. These keys carry the\n    NCM role assignment (Administrator, Full Access User, Read Only User,\n    Diagnostic User) and authorize what the request can do.\n\n\nContact Support:\n Name: Ericsson Enterprise Wireless / Cradlepoint Support",
+      "type": "text/plain"
+    }
+  }
+}

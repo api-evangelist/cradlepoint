@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts AlertPushDestinations API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-CP-API-ID",
+      "value": "{{X-CP-API-ID}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AlertPushDestinations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Alert Push Destinations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/alert_push_destinations/"
+          },
+          "docs": "Configured outbound HTTP destinations (webhooks) for alert delivery."
+        },
+        {
+          "info": {
+            "name": "Create An Alert Push Destination",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.cradlepointecm.com/api/v2/alert_push_destinations/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Register a webhook URL that should receive alert JSON payloads."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

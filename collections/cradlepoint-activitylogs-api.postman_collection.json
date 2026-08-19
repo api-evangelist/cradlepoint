@@ -1,0 +1,151 @@
+{
+  "item": [
+    {
+      "id": "e7239186-e222-4e1c-ac44-e1b74b623c78",
+      "name": "ActivityLogs",
+      "description": {
+        "content": "Audit / activity logs across accounts",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6c1f4a26-9a17-410f-8c99-72b2d23f6817",
+          "name": "List Activity Logs",
+          "request": {
+            "name": "List Activity Logs",
+            "description": {
+              "content": "View activities and changes within the authenticated account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "activity_logs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of records to skip for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2df4fdc-b762-4e51-b5dc-65f8706aee4e",
+              "name": "Paginated list of activity-log entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "activity_logs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CP-API-ID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"actor\": \"string\",\n      \"action\": \"string\",\n      \"target\": \"string\",\n      \"created_at\": \"1965-07-04T11:12:35.217Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"account\": \"string\",\n      \"actor\": \"string\",\n      \"action\": \"string\",\n      \"target\": \"string\",\n      \"created_at\": \"1965-04-17T14:27:46.015Z\"\n    }\n  ],\n  \"meta\": {\n    \"limit\": 6385,\n    \"offset\": 7539,\n    \"total_count\": 5328,\n    \"next\": \"string\",\n    \"previous\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.cradlepointecm.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-CP-API-ID"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2ac75df3-3bf3-4c0b-9bd4-7270f596d84e",
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts ActivityLogs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API to the Cradlepoint NetCloud Manager (NCM) platform. Lets\nclient applications perform programmatically many of the same operations\navailable in the NCM user interface: enumerate accounts, manage routers\nand groups, configure them, listen to alerts, ingest device telemetry,\ntrack location history, and administer users and subscriptions.\n\nAuthentication uses two header pairs sent on every request:\n  * X-CP-API-ID / X-CP-API-KEY — Cradlepoint API keys (account-level,\n    used for API-usage tracking, available from the Getting Started page\n    of developer.cradlepoint.com).\n  * X-ECM-API-ID / X-ECM-API-KEY — NetCloud (ECM) API keys generated by\n    an NCM administrator from the Tools tab in NCM. These keys carry the\n    NCM role assignment (Administrator, Full Access User, Read Only User,\n    Diagnostic User) and authorize what the request can do.\n\n\nContact Support:\n Name: Ericsson Enterprise Wireless / Cradlepoint Support",
+      "type": "text/plain"
+    }
+  }
+}

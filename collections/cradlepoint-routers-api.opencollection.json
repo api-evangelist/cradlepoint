@@ -1,0 +1,101 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cradlepoint NetCloud Manager API v2 Accounts Routers API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-CP-API-ID",
+      "value": "{{X-CP-API-ID}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Routers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Routers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/routers/",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              }
+            ]
+          },
+          "docs": "List routers visible to the authenticated NCM keys."
+        },
+        {
+          "info": {
+            "name": "Get A Router",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.cradlepointecm.com/api/v2/routers/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single router by ID."
+        },
+        {
+          "info": {
+            "name": "Update A Router",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://www.cradlepointecm.com/api/v2/routers/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update editable router fields such as `name`, `description`, `group`."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
