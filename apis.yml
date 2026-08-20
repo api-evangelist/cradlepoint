@@ -37,6 +37,21 @@ tags:
   - Branch Networking
   - SD-WAN
   - SASE
+  - Router
+  - In-Vehicle
+  - IoT
+  - Cellular
+  - Private 5G
+  - NetCloud
+  - Ericsson
+tags_raw:
+  - Wireless WAN
+  - 5G
+  - LTE
+  - Edge
+  - Branch Networking
+  - SD-WAN
+  - SASE
   - Routers
   - In-Vehicle
   - IoT
@@ -58,6 +73,10 @@ apis:
   humanURL: https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3
   tags:
   - NetCloud
+  - Router
+  - 5G
+  tags_raw:
+  - NetCloud
   - Routers
   - 5G
   properties:
@@ -76,6 +95,10 @@ apis:
     includes account, router, alert type, timestamp, and contextual metadata.
   humanURL: https://developer.cradlepoint.com/documentation/webhooks
   tags:
+  - Webhook
+  - Event
+  - Alerts
+  tags_raw:
   - Webhooks
   - Events
   - Alerts
@@ -97,6 +120,11 @@ apis:
   - SDK
   - Edge
   - Python
+  - Router
+  tags_raw:
+  - SDK
+  - Edge
+  - Python
   - Routers
   properties:
   - type: SDKs
@@ -111,6 +139,8 @@ apis:
   humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
   baseURL: https://www.cradlepointecm.com/api/v2/
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -139,6 +169,8 @@ apis:
   humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
   baseURL: https://www.cradlepointecm.com/api/v2/
   tags:
+  - Activity Logs
+  tags_raw:
   - ActivityLogs
   properties:
   - type: OpenAPI
@@ -195,6 +227,8 @@ apis:
   humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
   baseURL: https://www.cradlepointecm.com/api/v2/
   tags:
+  - Alert Rules
+  tags_raw:
   - AlertRules
   properties:
   - type: OpenAPI
@@ -251,6 +285,8 @@ apis:
   humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
   baseURL: https://www.cradlepointecm.com/api/v2/
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -335,6 +371,8 @@ apis:
   humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
   baseURL: https://www.cradlepointecm.com/api/v2/
   tags:
+  - Router
+  tags_raw:
   - Routers
   properties:
   - type: OpenAPI
