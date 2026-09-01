@@ -181,7 +181,7 @@ apis:
   humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
   baseURL: https://www.cradlepointecm.com/api/v2/
   tags:
-  - ActivityLogs
+  - Activity Logs
   tags_raw:
   - ActivityLogs
   properties:
@@ -239,7 +239,7 @@ apis:
   humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
   baseURL: https://www.cradlepointecm.com/api/v2/
   tags:
-  - AlertRules
+  - Alert Rules
   tags_raw:
   - AlertRules
   properties:
