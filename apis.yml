@@ -177,36 +177,6 @@ apis:
     url: json-schema/cradlepoint-alert-schema.json
   - type: JSONLD
     url: json-ld/cradlepoint-context.jsonld
-- aid: cradlepoint:cradlepoint-activitylogs-api
-  name: Cradlepoint ActivityLogs API
-  description: Audit / activity logs across accounts
-  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
-  baseURL: https://www.cradlepointecm.com/api/v2/
-  tags:
-  - Activity Logs
-  tags_raw:
-  - ActivityLogs
-  properties:
-  - type: OpenAPI
-    url: openapi/cradlepoint-activitylogs-api-openapi.yml
-  - type: Documentation
-    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
-  - type: Documentation
-    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
-  - type: GettingStarted
-    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
-  - type: Developer
-    url: https://developer.cradlepoint.com/
-  - type: Postman
-    url: https://developer.cradlepoint.com/documentation/samples
-  - type: SampleCode
-    url: https://github.com/cradlepoint/api-samples
-  - type: JSONSchema
-    url: json-schema/cradlepoint-router-schema.json
-  - type: JSONSchema
-    url: json-schema/cradlepoint-alert-schema.json
-  - type: JSONLD
-    url: json-ld/cradlepoint-context.jsonld
 - aid: cradlepoint:cradlepoint-alertpushdestinations-api
   name: Cradlepoint AlertPushDestinations API
   description: Outbound webhook destinations for alert delivery
@@ -217,36 +187,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cradlepoint-alertpushdestinations-api-openapi.yml
-  - type: Documentation
-    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
-  - type: Documentation
-    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
-  - type: GettingStarted
-    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
-  - type: Developer
-    url: https://developer.cradlepoint.com/
-  - type: Postman
-    url: https://developer.cradlepoint.com/documentation/samples
-  - type: SampleCode
-    url: https://github.com/cradlepoint/api-samples
-  - type: JSONSchema
-    url: json-schema/cradlepoint-router-schema.json
-  - type: JSONSchema
-    url: json-schema/cradlepoint-alert-schema.json
-  - type: JSONLD
-    url: json-ld/cradlepoint-context.jsonld
-- aid: cradlepoint:cradlepoint-alertrules-api
-  name: Cradlepoint AlertRules API
-  description: Alert monitoring rule configuration
-  humanURL: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
-  baseURL: https://www.cradlepointecm.com/api/v2/
-  tags:
-  - Alert Rules
-  tags_raw:
-  - AlertRules
-  properties:
-  - type: OpenAPI
-    url: openapi/cradlepoint-alertrules-api-openapi.yml
   - type: Documentation
     url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
   - type: Documentation
@@ -391,6 +331,62 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cradlepoint-routers-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
+- aid: cradlepoint:cradlepoint-activity-logs-api
+  name: Cradlepoint Activity Logs API
+  description: Audit / activity logs across accounts
+  humanURL: https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - Activity Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-activity-logs-api-openapi.yml
+  - type: Documentation
+    url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
+  - type: Documentation
+    url: https://docs.cradlepoint.com/r/NCM-APIv2-Overview
+  - type: GettingStarted
+    url: https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide
+  - type: Developer
+    url: https://developer.cradlepoint.com/
+  - type: Postman
+    url: https://developer.cradlepoint.com/documentation/samples
+  - type: SampleCode
+    url: https://github.com/cradlepoint/api-samples
+  - type: JSONSchema
+    url: json-schema/cradlepoint-router-schema.json
+  - type: JSONSchema
+    url: json-schema/cradlepoint-alert-schema.json
+  - type: JSONLD
+    url: json-ld/cradlepoint-context.jsonld
+- aid: cradlepoint:cradlepoint-alert-rules-api
+  name: Cradlepoint Alert Rules API
+  description: Alert monitoring rule configuration
+  humanURL: https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3
+  baseURL: https://www.cradlepointecm.com/api/v2/
+  tags:
+  - Alert Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/cradlepoint-alert-rules-api-openapi.yml
   - type: Documentation
     url: https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview
   - type: Documentation
