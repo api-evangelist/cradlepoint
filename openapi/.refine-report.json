@@ -1,15 +1,7 @@
 {
   "provider": "cradlepoint",
   "sources": [
-    "cradlepoint-accounts-api-openapi.yml",
-    "cradlepoint-activitylogs-api-openapi.yml",
-    "cradlepoint-alertpushdestinations-api-openapi.yml",
-    "cradlepoint-alertrules-api-openapi.yml",
-    "cradlepoint-alerts-api-openapi.yml",
-    "cradlepoint-groups-api-openapi.yml",
-    "cradlepoint-locations-api-openapi.yml",
-    "cradlepoint-netdevices-api-openapi.yml",
-    "cradlepoint-routers-api-openapi.yml"
+    "_original/cradlepoint-netcloud-manager-api-v2-openapi.yml"
   ],
   "outputs": [
     "cradlepoint-accounts-api-openapi.yml",
@@ -22,9 +14,26 @@
     "cradlepoint-netdevices-api-openapi.yml",
     "cradlepoint-routers-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 2 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "cradlepoint-netcloud-manager-api-v2-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: cradlepoint-activity-logs-api-openapi.yml, cradlepoint-alert-rules-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 12 total)"
+  ],
+  "skipped": [
+    "cradlepoint-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cradlepoint-activity-logs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cradlepoint-alert-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cradlepoint-alertpushdestinations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cradlepoint-alerts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cradlepoint-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cradlepoint-locations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cradlepoint-netdevices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cradlepoint-routers-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
