@@ -35,47 +35,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ActivityLogList'
 components:
-  schemas:
-    ActivityLogList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActivityLog'
-        meta:
-          $ref: '#/components/schemas/Meta'
-    ActivityLog:
-      type: object
-      properties:
-        id:
-          type: string
-        account:
-          type: string
-        actor:
-          type: string
-        action:
-          type: string
-        target:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-    Meta:
-      type: object
-      properties:
-        limit:
-          type: integer
-        offset:
-          type: integer
-        total_count:
-          type: integer
-        next:
-          type: string
-          nullable: true
-        previous:
-          type: string
-          nullable: true
   parameters:
     Limit:
       name: limit
@@ -92,6 +51,47 @@ components:
       schema:
         type: integer
         default: 0
+  schemas:
+    Meta:
+      type: object
+      properties:
+        limit:
+          type: integer
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+    ActivityLog:
+      type: object
+      properties:
+        id:
+          type: string
+        account:
+          type: string
+        actor:
+          type: string
+        action:
+          type: string
+        target:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+    ActivityLogList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActivityLog'
+        meta:
+          $ref: '#/components/schemas/Meta'
   securitySchemes:
     CradlepointApiKey:
       type: apiKey

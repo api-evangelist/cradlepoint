@@ -52,15 +52,6 @@ paths:
                 $ref: '#/components/schemas/AlertPushDestination'
 components:
   schemas:
-    AlertPushDestinationList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AlertPushDestination'
-        meta:
-          $ref: '#/components/schemas/Meta'
     Meta:
       type: object
       properties:
@@ -76,6 +67,15 @@ components:
         previous:
           type: string
           nullable: true
+    AlertPushDestinationList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertPushDestination'
+        meta:
+          $ref: '#/components/schemas/Meta'
     AlertPushDestination:
       type: object
       properties:

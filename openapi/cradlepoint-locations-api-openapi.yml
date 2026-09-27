@@ -86,6 +86,15 @@ components:
         created_at:
           type: string
           format: date-time
+    HistoricalLocationList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/HistoricalLocation'
+        meta:
+          $ref: '#/components/schemas/Meta'
     Meta:
       type: object
       properties:
@@ -101,15 +110,6 @@ components:
         previous:
           type: string
           nullable: true
-    HistoricalLocationList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/HistoricalLocation'
-        meta:
-          $ref: '#/components/schemas/Meta'
   securitySchemes:
     CradlepointApiKey:
       type: apiKey

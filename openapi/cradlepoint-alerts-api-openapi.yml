@@ -44,6 +44,22 @@ paths:
               schema:
                 $ref: '#/components/schemas/AlertList'
 components:
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      description: Maximum number of records to return per page.
+      schema:
+        type: integer
+        default: 20
+        maximum: 500
+    Offset:
+      name: offset
+      in: query
+      description: Number of records to skip for pagination.
+      schema:
+        type: integer
+        default: 0
   schemas:
     Alert:
       type: object
@@ -73,6 +89,15 @@ components:
           type: string
           format: date-time
           nullable: true
+    AlertList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Alert'
+        meta:
+          $ref: '#/components/schemas/Meta'
     Meta:
       type: object
       properties:
@@ -88,31 +113,6 @@ components:
         previous:
           type: string
           nullable: true
-    AlertList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Alert'
-        meta:
-          $ref: '#/components/schemas/Meta'
-  parameters:
-    Limit:
-      name: limit
-      in: query
-      description: Maximum number of records to return per page.
-      schema:
-        type: integer
-        default: 20
-        maximum: 500
-    Offset:
-      name: offset
-      in: query
-      description: Number of records to skip for pagination.
-      schema:
-        type: integer
-        default: 0
   securitySchemes:
     CradlepointApiKey:
       type: apiKey

@@ -52,6 +52,29 @@ paths:
                 $ref: '#/components/schemas/AlertRule'
 components:
   schemas:
+    AlertRule:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        enabled:
+          type: boolean
+        scope:
+          type: string
+          description: account, group, or router
+        target:
+          type: string
+        push_destinations:
+          type: array
+          items:
+            type: string
+        created_at:
+          type: string
+          format: date-time
     Meta:
       type: object
       properties:
@@ -76,29 +99,6 @@ components:
             $ref: '#/components/schemas/AlertRule'
         meta:
           $ref: '#/components/schemas/Meta'
-    AlertRule:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        type:
-          type: string
-        enabled:
-          type: boolean
-        scope:
-          type: string
-          description: account, group, or router
-        target:
-          type: string
-        push_destinations:
-          type: array
-          items:
-            type: string
-        created_at:
-          type: string
-          format: date-time
   securitySchemes:
     CradlepointApiKey:
       type: apiKey

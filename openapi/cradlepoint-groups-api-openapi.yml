@@ -52,15 +52,6 @@ components:
         type: integer
         default: 0
   schemas:
-    GroupList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Group'
-        meta:
-          $ref: '#/components/schemas/Meta'
     Group:
       type: object
       properties:
@@ -78,6 +69,15 @@ components:
         config:
           type: object
           additionalProperties: true
+    GroupList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+        meta:
+          $ref: '#/components/schemas/Meta'
     Meta:
       type: object
       properties:
