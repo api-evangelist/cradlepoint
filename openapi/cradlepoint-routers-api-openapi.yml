@@ -93,12 +93,6 @@ components:
         type: integer
         default: 20
         maximum: 500
-    IdPath:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
     Offset:
       name: offset
       in: query
@@ -106,7 +100,28 @@ components:
       schema:
         type: integer
         default: 0
+    IdPath:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
+    Meta:
+      type: object
+      properties:
+        limit:
+          type: integer
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
     Router:
       type: object
       properties:
@@ -150,21 +165,6 @@ components:
             $ref: '#/components/schemas/Router'
         meta:
           $ref: '#/components/schemas/Meta'
-    Meta:
-      type: object
-      properties:
-        limit:
-          type: integer
-        offset:
-          type: integer
-        total_count:
-          type: integer
-        next:
-          type: string
-          nullable: true
-        previous:
-          type: string
-          nullable: true
   securitySchemes:
     CradlepointApiKey:
       type: apiKey

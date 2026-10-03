@@ -52,6 +52,21 @@ components:
         type: integer
         default: 0
   schemas:
+    Meta:
+      type: object
+      properties:
+        limit:
+          type: integer
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
     Group:
       type: object
       properties:
@@ -78,21 +93,6 @@ components:
             $ref: '#/components/schemas/Group'
         meta:
           $ref: '#/components/schemas/Meta'
-    Meta:
-      type: object
-      properties:
-        limit:
-          type: integer
-        offset:
-          type: integer
-        total_count:
-          type: integer
-        next:
-          type: string
-          nullable: true
-        previous:
-          type: string
-          nullable: true
   securitySchemes:
     CradlepointApiKey:
       type: apiKey

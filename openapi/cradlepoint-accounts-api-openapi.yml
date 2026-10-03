@@ -60,12 +60,6 @@ components:
         type: integer
         default: 20
         maximum: 500
-    IdPath:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
     Offset:
       name: offset
       in: query
@@ -73,6 +67,12 @@ components:
       schema:
         type: integer
         default: 0
+    IdPath:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     AccountList:
       type: object
