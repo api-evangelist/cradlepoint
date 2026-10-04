@@ -36,6 +36,13 @@ paths:
                 $ref: '#/components/schemas/GroupList'
 components:
   parameters:
+    Offset:
+      name: offset
+      in: query
+      description: Number of records to skip for pagination.
+      schema:
+        type: integer
+        default: 0
     Limit:
       name: limit
       in: query
@@ -44,14 +51,16 @@ components:
         type: integer
         default: 20
         maximum: 500
-    Offset:
-      name: offset
-      in: query
-      description: Number of records to skip for pagination.
-      schema:
-        type: integer
-        default: 0
   schemas:
+    GroupList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+        meta:
+          $ref: '#/components/schemas/Meta'
     Meta:
       type: object
       properties:
@@ -84,15 +93,6 @@ components:
         config:
           type: object
           additionalProperties: true
-    GroupList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Group'
-        meta:
-          $ref: '#/components/schemas/Meta'
   securitySchemes:
     CradlepointApiKey:
       type: apiKey

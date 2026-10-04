@@ -52,6 +52,21 @@ paths:
                 $ref: '#/components/schemas/AlertRule'
 components:
   schemas:
+    Meta:
+      type: object
+      properties:
+        limit:
+          type: integer
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
     AlertRule:
       type: object
       properties:
@@ -75,21 +90,6 @@ components:
         created_at:
           type: string
           format: date-time
-    Meta:
-      type: object
-      properties:
-        limit:
-          type: integer
-        offset:
-          type: integer
-        total_count:
-          type: integer
-        next:
-          type: string
-          nullable: true
-        previous:
-          type: string
-          nullable: true
     AlertRuleList:
       type: object
       properties:

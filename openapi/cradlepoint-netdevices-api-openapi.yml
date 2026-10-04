@@ -39,7 +39,38 @@ paths:
               schema:
                 $ref: '#/components/schemas/NetDeviceList'
 components:
+  parameters:
+    Offset:
+      name: offset
+      in: query
+      description: Number of records to skip for pagination.
+      schema:
+        type: integer
+        default: 0
+    Limit:
+      name: limit
+      in: query
+      description: Maximum number of records to return per page.
+      schema:
+        type: integer
+        default: 20
+        maximum: 500
   schemas:
+    Meta:
+      type: object
+      properties:
+        limit:
+          type: integer
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
     NetDevice:
       type: object
       properties:
@@ -68,21 +99,6 @@ components:
           type: string
         ipv4_address:
           type: string
-    Meta:
-      type: object
-      properties:
-        limit:
-          type: integer
-        offset:
-          type: integer
-        total_count:
-          type: integer
-        next:
-          type: string
-          nullable: true
-        previous:
-          type: string
-          nullable: true
     NetDeviceList:
       type: object
       properties:
@@ -92,22 +108,6 @@ components:
             $ref: '#/components/schemas/NetDevice'
         meta:
           $ref: '#/components/schemas/Meta'
-  parameters:
-    Limit:
-      name: limit
-      in: query
-      description: Maximum number of records to return per page.
-      schema:
-        type: integer
-        default: 20
-        maximum: 500
-    Offset:
-      name: offset
-      in: query
-      description: Number of records to skip for pagination.
-      schema:
-        type: integer
-        default: 0
   securitySchemes:
     CradlepointApiKey:
       type: apiKey

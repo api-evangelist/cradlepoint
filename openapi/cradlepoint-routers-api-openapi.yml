@@ -85,14 +85,6 @@ paths:
                 $ref: '#/components/schemas/Router'
 components:
   parameters:
-    Limit:
-      name: limit
-      in: query
-      description: Maximum number of records to return per page.
-      schema:
-        type: integer
-        default: 20
-        maximum: 500
     Offset:
       name: offset
       in: query
@@ -106,7 +98,24 @@ components:
       required: true
       schema:
         type: string
+    Limit:
+      name: limit
+      in: query
+      description: Maximum number of records to return per page.
+      schema:
+        type: integer
+        default: 20
+        maximum: 500
   schemas:
+    RouterList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Router'
+        meta:
+          $ref: '#/components/schemas/Meta'
     Meta:
       type: object
       properties:
@@ -156,15 +165,6 @@ components:
         created_at:
           type: string
           format: date-time
-    RouterList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Router'
-        meta:
-          $ref: '#/components/schemas/Meta'
   securitySchemes:
     CradlepointApiKey:
       type: apiKey
