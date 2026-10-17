@@ -85,19 +85,6 @@ paths:
                 $ref: '#/components/schemas/Router'
 components:
   parameters:
-    Offset:
-      name: offset
-      in: query
-      description: Number of records to skip for pagination.
-      schema:
-        type: integer
-        default: 0
-    IdPath:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
     Limit:
       name: limit
       in: query
@@ -106,6 +93,19 @@ components:
         type: integer
         default: 20
         maximum: 500
+    IdPath:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    Offset:
+      name: offset
+      in: query
+      description: Number of records to skip for pagination.
+      schema:
+        type: integer
+        default: 0
   schemas:
     RouterList:
       type: object
@@ -116,21 +116,6 @@ components:
             $ref: '#/components/schemas/Router'
         meta:
           $ref: '#/components/schemas/Meta'
-    Meta:
-      type: object
-      properties:
-        limit:
-          type: integer
-        offset:
-          type: integer
-        total_count:
-          type: integer
-        next:
-          type: string
-          nullable: true
-        previous:
-          type: string
-          nullable: true
     Router:
       type: object
       properties:
@@ -165,6 +150,21 @@ components:
         created_at:
           type: string
           format: date-time
+    Meta:
+      type: object
+      properties:
+        limit:
+          type: integer
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
   securitySchemes:
     CradlepointApiKey:
       type: apiKey

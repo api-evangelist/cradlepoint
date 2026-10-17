@@ -67,6 +67,15 @@ components:
         previous:
           type: string
           nullable: true
+    AlertRuleList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertRule'
+        meta:
+          $ref: '#/components/schemas/Meta'
     AlertRule:
       type: object
       properties:
@@ -90,15 +99,6 @@ components:
         created_at:
           type: string
           format: date-time
-    AlertRuleList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AlertRule'
-        meta:
-          $ref: '#/components/schemas/Meta'
   securitySchemes:
     CradlepointApiKey:
       type: apiKey
