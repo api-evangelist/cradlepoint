@@ -1,4 +1,4 @@
-# Cradlepoint (cradlepoint)
+# Cradlepoint
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,159 +66,170 @@
 
 Cradlepoint is a Boise, Idaho-based provider of cloud-managed wireless edge routers, 5G adapters, branch-in-a-box appliances, and the NetCloud platform for enterprise wireless WAN (LTE/5G), in-vehicle networks, branch connectivity, and IoT. Ericsson acquired Cradlepoint in 2020 (closed November 2020 for approximately US$1.1B) and Cradlepoint now operates as the core of Ericsson Enterprise Wireless Solutions, working alongside Ericsson Private 5G and the Ericsson NetCloud SASE offering. Cradlepoint exposes its NetCloud Manager (NCM) platform through a documented RESTful API — NCM API v2 (Swagger 1.2, paired X-CP-API-ID/X-CP-API-KEY + X-ECM-API-ID/X-ECM-API-KEY headers, base https://www.cradlepointecm.com/api/v2/) and a newer NCM API v3 (OpenAPI 3.0, bearer-token authentication) — plus a NetCloud Router SDK for on-router Python applications and webhook destinations for alert delivery. The developer area (developer.cradlepoint.com), customer support article base (customer.cradlepoint.com), and Ericsson Enterprise Wireless docs portal (docs.cradlepoint.com) host the Getting Started guides, API reference, sample collections, and Postman bundles.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/cradlepoint/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cradlepoint/refs/heads/main/apis.yml)
+**Areas:** Wireless WAN · 5G · LTE · Edge · Branch Networking · SD-WAN · SASE · Router · In-Vehicle · IoT · Cellular · Private 5G
 
-## Scope
+## Cradlepoint on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** 3rd-Party
+Everything profiled for Cradlepoint is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cradlepoint/](https://apis.io/providers/cradlepoint/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (12)
 
-- Wireless WAN
-- 5G
-- LTE
-- Edge
-- Branch Networking
-- SD-WAN
-- SASE
-- Routers
-- In-Vehicle
-- IoT
-- Cellular
-- Private 5G
-- NetCloud
-- Ericsson
+- [Cradlepoint NetCloud Manager API v3](https://apis.io/apis/cradlepoint/netcloud-manager-api-v3/) — The next-generation NetCloud Manager API. Documented with OpenAPI 3.0, authenticated with bearer tokens, designed for improved performance, stability, and…
+- [Cradlepoint NetCloud Alert Webhooks](https://apis.io/apis/cradlepoint/netcloud-webhooks/) — Outbound HTTP destinations (alert_push_destinations) configured via the NCM API or UI to receive real-time JSON alert payloads when NCM alert rules fire…
+- [Cradlepoint NetCloud Router SDK](https://apis.io/apis/cradlepoint/netcloud-router-sdk/) — On-router Python SDK and toolchain (the "SDK" / "Router SDK") for building and deploying custom applications onto Cradlepoint routers running NetCloud OS.…
+- [Cradlepoint Accounts API](https://apis.io/apis/cradlepoint/cradlepoint-accounts-api/) — Account and subaccount management
+- [Cradlepoint AlertPushDestinations API](https://apis.io/apis/cradlepoint/cradlepoint-alertpushdestinations-api/) — Outbound webhook destinations for alert delivery
+- [Cradlepoint Alerts API](https://apis.io/apis/cradlepoint/cradlepoint-alerts-api/) — Generated alerts
+- [Cradlepoint Groups API](https://apis.io/apis/cradlepoint/cradlepoint-groups-api/) — Logical device groupings
+- [Cradlepoint Locations API](https://apis.io/apis/cradlepoint/cradlepoint-locations-api/) — Current and historical router location
+- [Cradlepoint NetDevices API](https://apis.io/apis/cradlepoint/cradlepoint-netdevices-api/) — Modems, WAN devices, and network interfaces on routers
+- [Cradlepoint Routers API](https://apis.io/apis/cradlepoint/cradlepoint-routers-api/) — Router (edge device) management
+- [Cradlepoint Activity Logs API](https://apis.io/apis/cradlepoint/cradlepoint-activity-logs-api/) — Audit / activity logs across accounts
+- [Cradlepoint Alert Rules API](https://apis.io/apis/cradlepoint/cradlepoint-alert-rules-api/) — Alert monitoring rule configuration
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-25
-- **Modified:** 2026-05-25
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Cradlepoint NetCloud Manager API v2
+Which operations an agent can call, which act, and which need a human in the loop.
 
-RESTful API for the NetCloud Manager (NCM) platform. Programmatic access to accounts, routers, groups, configuration_managers, alerts and alert_rules, alert_push_destinations, activity_logs, locations and historical_locations, net_devices, net_device_signal_samples, net_device_usage_samples, net_device_health, net_device_metrics, router_alerts, router_lans, router_state_samples, users, subscriptions, and firmware. Base URL https://www.cradlepointecm.com/api/v2/. Authentication uses two paired key sets sent as headers on every request — X-CP-API-ID / X-CP-API-KEY (account-level Cradlepoint API keys, for usage tracking) and X-ECM-API-ID / X-ECM-API-KEY (NCM-tenant API keys generated from the NCM Tools tab; carry the Administrator / Full Access / Read-Only / Diagnostic role grants). Supports GET, POST, PUT, PATCH, DELETE; not every method is supported on every resource. Documented with Swagger 1.2.
+- [Cradlepoint Agentic Access](https://apis.io/agentic-access/cradlepoint/cradlepoint-agentic-access/)
 
-- **Human URL:** [https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview](https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview)
-- **Base URL:** `https://www.cradlepointecm.com/api/v2/`
+#### JSON Schema (2)
 
-#### Tags
+The data models the API reads and writes.
 
-- NetCloud
-- Routers
-- Wireless WAN
-- Edge
-- Cellular
+- [Cradlepoint NCM Alert](https://apis.io/schemas/cradlepoint/cradlepoint-alert/)
+- [Cradlepoint Router](https://apis.io/schemas/cradlepoint/cradlepoint-router/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview)
-- [Documentation](https://docs.cradlepoint.com/r/NCM-APIv2-Overview)
-- [Getting Started](https://customer.cradlepoint.com/s/article/NetCloud-API-Getting-Started-Guide)
-- [Developer](https://developer.cradlepoint.com/)
-- [OpenAPI](openapi/cradlepoint-netcloud-manager-api-v2-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/cradlepoint-netcloud-manager-api-v2.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cradlepoint-netcloud-manager-api-v2.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman](https://developer.cradlepoint.com/documentation/samples) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Sample Code](https://github.com/cradlepoint/api-samples)
-- [JSON Schema](json-schema/cradlepoint-router-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/cradlepoint-alert-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/cradlepoint-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+Linked-data contexts for the provider's vocabulary.
 
-### Cradlepoint NetCloud Manager API v3
+- [Cradlepoint Context](https://apis.io/jsonld/cradlepoint/cradlepoint-context/)
 
-The next-generation NetCloud Manager API. Documented with OpenAPI 3.0, authenticated with bearer tokens, designed for improved performance, stability, and usability over API v2. Coexists with v2 during a multi-year transition window; v3 covers core router, device, alert, group, and account operations.
+#### Vocabulary (1)
 
-- **Human URL:** [https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3](https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3)
+The provider's domain terms, defined.
 
-#### Tags
+- [Cradlepoint Vocabulary](https://apis.io/vocabularies/cradlepoint/cradlepoint-vocabulary/)
 
-- NetCloud
-- Routers
-- 5G
+#### Examples (2)
 
-#### Properties
+Example requests and responses.
 
-- [Documentation](https://customer.cradlepoint.com/s/article/NetCloud-Manager-API-v3)
-- [Developer](https://developer.cradlepoint.com/)
-- [Sample Code](https://github.com/cradlepoint/api-samples)
-- [Postman Collection](collections/cradlepoint-netcloud-manager-api-v2.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cradlepoint-netcloud-manager-api-v2.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Cradlepoint Alert Webhook Example](https://apis.io/examples/cradlepoint/cradlepoint-alert-webhook-example/)
+- [Cradlepoint List Routers Example](https://apis.io/examples/cradlepoint/cradlepoint-list-routers-example/)
 
-### Cradlepoint NetCloud Alert Webhooks
+#### Collections (10)
 
-Outbound HTTP destinations (alert_push_destinations) configured via the NCM API or UI to receive real-time JSON alert payloads when NCM alert rules fire (router offline, signal degradation, configuration change, subscription expiration, threshold breach). Each destination is a URL + optional auth headers; payload includes account, router, alert type, timestamp, and contextual metadata.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://developer.cradlepoint.com/documentation/webhooks](https://developer.cradlepoint.com/documentation/webhooks)
+- [Cradlepoint NetCloud Manager API v2 Accounts API](https://apis.io/collections/cradlepoint/open-cradlepoint-accounts-api/)
+- [Cradlepoint NetCloud Manager API v2 Accounts ActivityLogs API](https://apis.io/collections/cradlepoint/open-cradlepoint-activitylogs-api/)
+- [Cradlepoint NetCloud Manager API v2 Accounts AlertPushDestinations API](https://apis.io/collections/cradlepoint/open-cradlepoint-alertpushdestinations-api/)
+- [Cradlepoint NetCloud Manager API v2 Accounts AlertRules API](https://apis.io/collections/cradlepoint/open-cradlepoint-alertrules-api/)
+- [Cradlepoint NetCloud Manager API v2 Accounts Alerts API](https://apis.io/collections/cradlepoint/open-cradlepoint-alerts-api/)
+- [Cradlepoint NetCloud Manager API v2 Accounts Groups API](https://apis.io/collections/cradlepoint/open-cradlepoint-groups-api/)
+- [Cradlepoint NetCloud Manager API v2 Accounts Locations API](https://apis.io/collections/cradlepoint/open-cradlepoint-locations-api/)
+- [Cradlepoint NetCloud Manager API v2](https://apis.io/collections/cradlepoint/open-cradlepoint-netcloud-manager-api-v2/)
+- [Cradlepoint NetCloud Manager API v2 Accounts NetDevices API](https://apis.io/collections/cradlepoint/open-cradlepoint-netdevices-api/)
+- [Cradlepoint NetCloud Manager API v2 Accounts Routers API](https://apis.io/collections/cradlepoint/open-cradlepoint-routers-api/)
 
-#### Tags
+#### Governance rules (2)
 
-- Webhooks
-- Events
-- Alerts
+Spectral rulesets for the provider's contracts.
 
-#### Properties
+- [Cradlepoint — jsonschema rules](https://apis.io/rules/cradlepoint/cradlepoint-jsonschema-spectral-rules/)
+- [Cradlepoint API Rules](https://apis.io/rules/cradlepoint/cradlepoint-rules/)
 
-- [Documentation](https://developer.cradlepoint.com/documentation/webhooks)
-- [Documentation](https://customer.cradlepoint.com/s/article/NCM-APIv2-Overview)
-- [Postman Collection](collections/cradlepoint-netcloud-manager-api-v2.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cradlepoint-netcloud-manager-api-v2.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Security (3)
 
-### Cradlepoint NetCloud Router SDK
+Authentication, trust centre, and vulnerability disclosure.
 
-On-router Python SDK and toolchain (the "SDK" / "Router SDK") for building and deploying custom applications onto Cradlepoint routers running NetCloud OS. Lets developers write Python apps that read router configuration, GPIO, GPS, modem signal, and connection state, and that can be packaged and deployed across a fleet via NCM. Sample apps in cradlepoint/sdk-samples cover GPS forwarding, modem diagnostics, serial passthrough, MQTT publishing, and more.
+- [Cradlepoint Authentication](https://apis.io/security/cradlepoint/cradlepoint-authentication/)
+- [Cradlepoint Domain Security](https://apis.io/security/cradlepoint/cradlepoint-domain-security/)
+- [Cradlepoint Vulnerability Disclosure](https://apis.io/security/cradlepoint/cradlepoint-vulnerability-disclosure/)
 
-- **Human URL:** [https://github.com/cradlepoint/sdk-samples](https://github.com/cradlepoint/sdk-samples)
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
-- SDK
-- Edge
-- Python
-- Routers
+- [Cradlepoint Plans Pricing](https://apis.io/plans/cradlepoint/cradlepoint-plans-pricing/)
 
-#### Properties
+#### Rate limits (1)
 
-- [SDK](https://github.com/cradlepoint/sdk-samples)
-- [Documentation](https://customer.cradlepoint.com/s/article/NCOS-Router-SDK-Developers-Guide)
-- [Language](https://www.python.org/)
-- [Postman Collection](collections/cradlepoint-netcloud-manager-api-v2.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cradlepoint-netcloud-manager-api-v2.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published request limits.
 
-## Common Properties
+- [Cradlepoint Rate Limits](https://apis.io/rate-limits/cradlepoint/cradlepoint-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Cradlepoint Finops](https://apis.io/finops/cradlepoint/cradlepoint-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://cradlepoint.com)
-- [Company](https://cradlepoint.com/about-us/)
-- [Products](https://cradlepoint.com/products/)
-- [Net Cloud](https://cradlepoint.com/products/netcloud-service/)
-- [Net Cloud S A S E](https://cradlepoint.com/products/netcloud-sase/)
-- [Private5 G](https://cradlepoint.com/products/private-5g/)
-- [Developer](https://developer.cradlepoint.com/)
 - [Documentation](https://docs.cradlepoint.com/)
-- [Support](https://customer.cradlepoint.com/)
-- [Git Hub](https://github.com/cradlepoint)
-- [A P I Samples](https://github.com/cradlepoint/api-samples)
-- [S D K Samples](https://github.com/cradlepoint/sdk-samples)
-- [Container Samples](https://github.com/cradlepoint/container-samples)
-- [Blog](https://cradlepoint.com/resources/blog/)
-- [News](https://cradlepoint.com/news-events/)
 - [Pricing](https://cradlepoint.com/lets-talk/)
-- [Careers](https://cradlepoint.com/about-us/careers/)
-- [Contact](https://cradlepoint.com/lets-talk/)
-- [Ericsson](https://www.ericsson.com/en/enterprise-wireless-solutions)
-- [Twitter](https://twitter.com/cradlepoint)
-- [LinkedIn](https://www.linkedin.com/company/cradlepoint)
-- [YouTube](https://www.youtube.com/@Cradlepoint)
-- [Plans](plans/cradlepoint-plans-pricing.yml)
-- [Rate Limits](rate-limits/cradlepoint-rate-limits.yml)
-- [Fin Ops](finops/cradlepoint-finops.yml)
-- [Vocabulary](vocabulary/cradlepoint-vocabulary.yml)
-- [Spectral Rules](rules/cradlepoint-rules.yml)
+- [Support](https://customer.cradlepoint.com/)
+- [Blog](https://cradlepoint.com/resources/blog/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 36.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 58.0 |
+| Contract quality | 58.5 |
+| Contract governance | 27.3 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 52.4 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cradlepoint/](https://apis.io/providers/cradlepoint/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cradlepoint: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cradlepoint/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
